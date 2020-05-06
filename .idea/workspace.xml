@@ -67,7 +67,7 @@
       <workItem from="1588641433142" duration="23041000" />
       <workItem from="1588727576835" duration="9579000" />
       <workItem from="1588737230989" duration="1549000" />
-      <workItem from="1588749461431" duration="1254000" />
+      <workItem from="1588749461431" duration="1632000" />
     </task>
     <task id="LOCAL-00001" summary="TraVinh_QuanTrac">
       <created>1588737118984</created>
@@ -97,7 +97,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588750518819</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="TraVinh_QuanTrac">
+      <created>1588750746690</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588750746690</updated>
+    </task>
+    <task id="LOCAL-00006" summary="TraVinh_QuanTrac">
+      <created>1588750764682</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588750764682</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,27 +122,27 @@
     <option name="LAST_COMMIT_MESSAGE" value="TraVinh_QuanTrac" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1588750753030">
+    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1588750763909">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588738140550" />
-    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588750753030" />
+    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588750763909" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1588132046198">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588132046198" />
-    <state x="277" y="59" key="SettingsEditor" timestamp="1588750733347">
+    <state x="277" y="59" key="SettingsEditor" timestamp="1588750792355">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588738160958" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1280.689@0.0.1536.834" timestamp="1588749804835" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1588217435909" />
-    <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1588750733347" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1588750536702">
+    <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1588750792355" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1588750769256">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588738145760" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588750536702" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588750769256" />
     <state x="431" y="155" width="670" height="58" key="search.everywhere.popup" timestamp="1588160718956">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

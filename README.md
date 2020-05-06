@@ -21,4 +21,5 @@
 + Làm baner to hơn
 + Bỏ nút Copy và Print, đổi màu đỏ cho các nút hiển thị 1 giờ, 8 giờ và 24 giờ
 + Tool chạy batch files để ở trang Admin (tool chạy bằng Php)
++ Làm phần Scrollbar width to hơn
 
