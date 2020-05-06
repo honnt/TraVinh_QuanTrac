@@ -15,6 +15,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/assets/css/main.css" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/assets/js/config.js" root0="SKIP_INSPECTION" />
@@ -27,6 +30,7 @@
     <setting file="file://$PROJECT_DIR$/README.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1b7Azah71Uj3CGrSStKiYCKs8I3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -61,7 +65,7 @@
       <workItem from="1588576966359" duration="9092000" />
       <workItem from="1588586743997" duration="1120000" />
       <workItem from="1588641433142" duration="23041000" />
-      <workItem from="1588727576835" duration="9084000" />
+      <workItem from="1588727576835" duration="9472000" />
     </task>
     <servers />
   </component>
@@ -69,6 +73,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1588737096145">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588737096145" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1588132046198">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
