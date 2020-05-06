@@ -213,9 +213,9 @@ $(document).ready(function () {
             "<'row'<'col-sm-12'tr>>" +
             "<'row'<'col-sm-5'i><'col-sm-7'p>>",
         buttons: [
-            {extend: 'copy', className: 'btn btn-info btn-sm'},
+            // {extend: 'copy', className: 'btn btn-info btn-sm'},
             {extend: 'pdf', className: 'btn btn-info btn-sm'},
-            {extend: 'print', className: 'btn btn-info btn-sm'},
+            // {extend: 'print', className: 'btn btn-info btn-sm'},
             {extend: 'excel', className: 'btn btn-info btn-sm'}
         ],
         paging: true,

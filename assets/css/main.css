@@ -675,10 +675,14 @@ span .paginate_button {
     text-align: center;
 }
 
+.dataTables_length {
+    margin-left: -20%;
+}
+
 #table_threshold_wrapper .btn.active{
     color: #fff;
-    background-color: #5bc0de;
-    border-color: #46b8da;
+    background-color: #ff001e;
+    border-color: #ff223b;
     box-shadow: none;
 }
 
