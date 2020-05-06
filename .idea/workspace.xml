@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/assets/css/main.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets/js/config.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/index.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapSearch.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapVS_data.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapVS_chart.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets/js/main.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/README.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1b7Azah71Uj3CGrSStKiYCKs8I3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aiui-admin.wordpress" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="" />
+      <created>1587973022541</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587973022541</updated>
+      <workItem from="1587973027511" duration="2835000" />
+      <workItem from="1588122669539" duration="4445000" />
+      <workItem from="1588142284713" duration="1852000" />
+      <workItem from="1588159518008" duration="6017000" />
+      <workItem from="1588167226673" duration="4957000" />
+      <workItem from="1588172774712" duration="12469000" />
+      <workItem from="1588215533785" duration="1410000" />
+      <workItem from="1588217461455" duration="18996000" />
+      <workItem from="1588555144187" duration="10029000" />
+      <workItem from="1588576966359" duration="9092000" />
+      <workItem from="1588586743997" duration="1120000" />
+      <workItem from="1588641433142" duration="23041000" />
+      <workItem from="1588727576835" duration="9084000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1588132046198">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588132046198" />
+    <state x="277" y="59" key="SettingsEditor" timestamp="1588217435909">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1588217435909" />
+    <state x="431" y="155" width="670" height="58" key="search.everywhere.popup" timestamp="1588160718956">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="670" height="58" key="search.everywhere.popup/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1588160718956" />
+  </component>
+</project>

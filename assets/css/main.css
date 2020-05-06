@@ -1,0 +1,762 @@
+/*** Web Page ***/
+html, body, #container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    padding-top: 50px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 0;
+}
+
+/*** Custom Scrollbar if navbar have overflow ***/
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #88d7fa;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1aceff;
+}
+
+/*** Tool quan trắc***/
+label {
+    margin-bottom: 0;
+}
+
+/*** Boostrap Toggle ***/
+.toggle.ios, .toggle-on.ios, .toggle-off.ios {
+    border-radius: 20px;
+}
+
+.toggle.ios .toggle-handle {
+    border-radius: 50%;
+}
+
+.toggle-handle {
+    height: 32px !important;
+    width: 32px !important;
+    margin-left: -30px !important;
+    margin-right: -30px !important;
+}
+
+.toggle.btn {
+    width: 60px !important;
+}
+
+/*** Custom class `bg` Boostrap ***/
+.bg-danger {
+    background-color: #ff001e;
+}
+
+/*** Custom class `btn` Boostrap ***/
+.btn-cus {
+    margin-top: -2px;
+    margin-right: 10px;
+}
+
+.btn-default:hover {
+    font-weight: bold;
+}
+
+.btn-primary {
+    color: #000000;
+    background-color: #88d7fa;
+}
+
+.btn-primary:hover {
+    font-weight: bold;
+    background-color: #0099fa;
+}
+
+.btn-primary:focus {
+    font-weight: bold;
+    background-color: #0099fa;
+    border-color: #5bc0de;
+}
+
+.btn-success:hover {
+    font-weight: bold;
+    color: #000;
+    background-color: #a2ffa1;
+}
+
+.btn-success:focus {
+    font-weight: bold;
+    color: #000;
+    background-color: #a2ffa1;
+    border-color: #009d27;
+}
+
+.btn-warning:hover {
+    font-weight: bold;
+    color: #000;
+    background-color: #f0b870;
+}
+
+.btn-warning:focus {
+    font-weight: bold;
+    color: #000;
+    background-color: #f0b870;
+    border-color: #ffa214;
+}
+
+.toggle_cus {
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+/*** Màu label cho các toggle lớp quan trắc ***/
+.tramqt_dat_label {
+    color: #cf540f;
+}
+
+.tramqt_nuocmat_label {
+    color: #009cff;
+}
+
+.tramqt_nuocngam_label {
+    color: #276a91;
+}
+
+.tramqt_nuocthai_label {
+    color: #009d27;
+}
+
+.tramqt_khongkhi_label {
+    color: #606060;
+}
+
+.hanhchinh-label {
+    color: #fa0086;
+}
+
+/*** Switch Toggle Label ***/
+.nav-titles, .nav-titles-icon {
+    position: absolute;
+    margin-top: 7px;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.nav-titles {
+    margin-left: -50px;
+}
+
+.nav-titles-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 24%;
+}
+
+.nav-titles-default {
+    font-style: italic;
+    color: #000;
+}
+
+.legend-icon {
+    margin-left: 23%;
+    font-size: 11px;
+    color: #fff;
+}
+
+.default_icon {
+    background-color: #8f8f8f;
+}
+
+.hanhchinh_icon {
+    background-color: #fa0086;
+}
+
+.tramqt_dat_icon {
+    background-color: #cf540f;
+}
+
+.tramqt_nuocmat_icon {
+    background-color: #009cff;
+}
+
+.tramqt_nuocngam_icon {
+    background-color: #276a91;
+}
+
+.tramqt_nuocthai_icon {
+    background-color: #009d27;
+}
+
+.tramqt_khongkhi_icon {
+    background-color: #606060;
+}
+
+/*** Search Advanced ***/
+#searchbox {
+    margin-left: 14px;
+}
+
+.search-advanced-titles, .modal-advanced-titles {
+    margin-top: 12px;
+    color: #0099fa;
+    font-weight: bold;
+}
+
+.search-advanced, .modal-advanced {
+    margin-left: -10px;
+    margin-top: 5px;
+}
+
+.search-error, .search-error-basic {
+    margin-bottom: 10px;
+    margin-left: 21px;
+    color: #ff142d;
+    font-weight: bold;
+}
+
+.search-success, .search-success-basic {
+    margin-bottom: 10px;
+    margin-left: 21px;
+    color: #00a709;
+    font-weight: bold;
+}
+
+#search-advanced-btn, #search-basic-btn, #statistic-btn {
+    width: 96.5% !important;
+    font-size: 16px;
+}
+
+/*** Custom tag <hr> ***/
+.line-search {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #999;
+    color: #999;
+    text-align: center;
+}
+
+.line-search:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+/*** Navbar ***/
+.navbar-inverse {
+    background-color: #e6f2ff;
+    border-color: #0099fa;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #1a6aff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #000000;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #e3846f
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #000000 !important;
+    background-color: transparent;
+}
+
+#logo {
+    float: left;
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.title {
+    float: left;
+    margin-top: 10px;
+}
+
+#titlefont1 {
+    font-size: 10px;
+    font-weight: bold;
+    color: #ff001e;
+}
+
+#titlefont2 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #1ab400;
+}
+
+#sidebar {
+    float: left;
+    margin-left: 1px;
+    display: block;
+    width: 355px;
+    height: 100%;
+    max-width: 100%;
+    background-color: #ffffff;
+}
+
+#loading {
+    position: absolute;
+    width: 220px;
+    height: 19px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -110px;
+    z-index: 20001;
+}
+
+.progress-bar-full {
+    width: 100%;
+}
+
+#features {
+    margin: 0px;
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#sidebar-hide-btn {
+    margin-top: -2px;
+}
+
+#aboutTabsContent, #statistic-result-TabsContent {
+    padding-top: 10px;
+}
+
+.red {
+    color: #ff001e;
+}
+
+.blue {
+    color: #0099fa;
+}
+
+.brown {
+    color: #ff6810;
+}
+
+.black {
+    color: #4c4c4c;
+}
+
+.panel-default > .panel-heading {
+    color: #333;
+    background-color: #e6f2ff;
+    border: 1px solid #0099fa;
+    border-radius: 50px;
+}
+
+.panel-dropdown-content {
+    display: none;
+}
+
+.panel-data-quantrac {
+    border-radius: 0px 0px 20px 20px !important;
+}
+
+.panel-heading {
+    width: 350px;
+}
+
+.panel-body {
+    width: 350px;
+}
+
+.panel-title {
+    font-weight: bold;
+}
+
+.panel-map {
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+.panel-search {
+    font-size: 14px;
+    color: #999999;
+}
+
+.panel-help, .panel-version {
+    margin-left: 7.5px;
+    color: #999999;
+    font-size: 14px;
+}
+
+.panel-help:hover {
+    color: #0099fa;
+    font-weight: bold;
+}
+
+.panel-version-style {
+    background-color: #36caff;
+    color: #fff;
+}
+
+.feature-row {
+    cursor: pointer;
+    width: 250px;
+}
+
+.sidebar-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar-table {
+    position: absolute;
+    width: 100%;
+    top: 103px;
+    bottom: 0px;
+    overflow: auto;
+}
+
+.leaflet-control-layers {
+    overflow: auto;
+}
+
+.leaflet-control-layers label {
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+
+.leaflet-control-layers-list input[type="radio"], input[type="checkbox"] {
+    margin: 2px;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.navbar-collapse.in {
+    overflow-y: hidden;
+}
+
+.navbar-header .navbar-icon-container {
+    margin-right: 15px;
+}
+
+.navbar-header .navbar-icon {
+    line-height: 50px;
+    height: 50px;
+}
+
+.navbar-header a.navbar-icon {
+    margin-left: 25px;
+}
+
+.typeahead {
+    background-color: #FFFFFF;
+}
+
+.tt-dropdown-menu {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 4px;
+    margin-left: -20px;
+    padding: 4px 0;
+    width: 120%;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.tt-suggestion {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 3px 10px;
+}
+
+.tt-suggestion.tt-cursor {
+    background-color: #0097CF;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.tt-suggestion p {
+    margin: 0;
+}
+
+.tt-suggestion + .tt-suggestion {
+    border-top: 1px solid #ccc;
+}
+
+.typeahead-header {
+    margin: 0 5px 5px 5px;
+    padding: 3px 0;
+    text-align: center;
+    border-bottom: 1px solid #ff6810;
+}
+
+.has-feedback .form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+
+/*** Custom Control Label ***/
+.image-checkbox {
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+/*** Modal ***/
+#info_qt, #data_qt, #chart_data_qt {
+    padding: 15px;
+}
+
+#data_qt, .table-overflow {
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#chart_data_qt {
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.gender-chart {
+    height: 400px;
+}
+
+#search_stats_tramqt {
+    margin: -5px 0px 0px -30px;
+    padding: 7px;
+    font-size: 16px;
+}
+
+#search_stats_tramqt:hover {
+    border-radius: 8%;
+    border: 1px solid #aaa;
+}
+
+.modal-header {
+    height: 50.5px;
+    cursor: move;
+    border-bottom: 1px solid #0099fa;
+}
+
+.modal-statistic {
+    float: right;
+    margin-top: 0px;
+    margin-right: 0px;
+    height: 90%;
+    width: 460px;
+    border-radius: 0%;
+}
+
+.modal-threshold {
+    margin-top: 3.3%;
+    width: 80%;
+}
+
+.modal-body-statistic {
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.modal-stats-search, .modal-stats-para  {
+    margin-top: 3.75%;
+    height: 90%;
+    border-radius: 0%;
+}
+
+.modal-stats-search {
+    margin-left: 31.5%;
+    width: 445px;
+}
+
+.modal-stats-para {
+    margin-left: 20%;
+    width: 600px;
+}
+
+.modal-statistic-result {
+    width: 90%;
+    height: 90%;
+    margin-top: 0;
+}
+
+.modal-statistic-result-content {
+    height: auto;
+    min-height: 90%;
+    border-radius: 0;
+}
+
+#feature-result-TabsContent {
+    height: 400px;
+    /* overflow-y: auto;
+    overflow-x: hidden; */
+}
+
+/*** Datatables ***/
+table.dataTable thead .sorting::before,
+table.dataTable thead .sorting_asc::before,
+table.dataTable thead .sorting_asc::after {
+    display: none !important;
+}
+
+table.dataTable thead .sorting::after,
+table.dataTable thead .sorting_desc::after,
+table.dataTable thead .sorting_desc::before {
+    display: none !important;
+}
+
+td.details-control {
+    background: url('../images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('../images/details_close.png') no-repeat center center;
+}
+
+table.dataTable thead .sorting, table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc, table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+    text-align: center;
+}
+
+#table_threshold_wrapper .col-sm-7 {
+    margin-top: -3px !important;
+}
+
+#table_threshold_wrapper .col-sm-3 {
+    margin-top: 2px !important;
+}
+
+span .paginate_button {
+    padding: 0 !important;
+}
+
+.parameter_tab {
+    text-align: center;
+}
+
+#table_threshold_wrapper .btn.active{
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    box-shadow: none;
+}
+
+/*** Reponsive ***/
+@media (max-width: 992px) {
+    .navbar .navbar-brand {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    #sidebar {
+        display: none;
+    }
+
+    .modal-statistic {
+        margin-right: 0;
+        width: 100%;
+        height: 90%;
+    }
+
+    .modal-body-statistic {
+        height: 350px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .url-break {
+        word-break: break-all;
+        word-break: break-word;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+
+    .dropdown-menu a i {
+        color: #FFFFFF;
+    }
+
+    #titlefont1 {
+        font-size: 8px;
+    }
+
+    #titlefont2 {
+        margin-top: 5px;
+        margin-left: -5px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 767px) {
+    .navbar-nav {
+        float: right;
+    }
+
+    .modal-statistic {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    #titlefont1 {
+        margin-top: 5px;
+        font-size: 6px;
+    }
+
+    #titlefont2 {
+        margin-left: -5px;
+        font-size: 8px;
+    }
+}
+
+/* Print Handling */
+@media print {
+    .navbar {
+        display: none !important;
+    }
+
+    /* .leaflet-control-container {
+        display: none !important;
+    } */
+}
