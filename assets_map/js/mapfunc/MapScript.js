@@ -15,7 +15,7 @@ var Basemaps_Control = [
         maxZoom: 20,
         minZoom: 0,
         label: 'Bản đồ đơn giản',  // optional label used for tooltip
-        iconURL: 'http://b.tile.stamen.com/toner-lite/7/101/60.png'
+        iconURL: 'assets/images/b_tile.stamen.png'
 
     }),
 
@@ -25,7 +25,7 @@ var Basemaps_Control = [
         maxZoom: 20,
         minZoom: 0,
         label: 'Bản đồ hành chính',
-        iconURL: 'http://gis.chinhphu.vn/BaseMap/7/101/60.png'
+        iconURL: 'assets/images/gis_chinhphu.png'
     }),
 
     L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}', {

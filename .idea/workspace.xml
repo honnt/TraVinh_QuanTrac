@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="" />
+    <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../aiui-admin.wordpress" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -65,26 +67,44 @@
       <workItem from="1588576966359" duration="9092000" />
       <workItem from="1588586743997" duration="1120000" />
       <workItem from="1588641433142" duration="23041000" />
-      <workItem from="1588727576835" duration="9472000" />
+      <workItem from="1588727576835" duration="9579000" />
+      <workItem from="1588737230989" duration="437000" />
     </task>
+    <task id="LOCAL-00001" summary="TraVinh_QuanTrac">
+      <created>1588737118984</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588737118984</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="TraVinh_QuanTrac" />
+    <option name="LAST_COMMIT_MESSAGE" value="TraVinh_QuanTrac" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1588737096145">
+    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1588737117825">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588737096145" />
+    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588737117825" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1588132046198">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588132046198" />
-    <state x="277" y="59" key="SettingsEditor" timestamp="1588217435909">
+    <state x="277" y="59" key="SettingsEditor" timestamp="1588737526104">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588737526104" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1588217435909" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1588737124286">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588737124286" />
     <state x="431" y="155" width="670" height="58" key="search.everywhere.popup" timestamp="1588160718956">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
