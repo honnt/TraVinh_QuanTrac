@@ -15,7 +15,7 @@ input[type="radio"], input[type="checkbox"] {
 
 /*** Custom Scrollbar if navbar have overflow ***/
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -286,8 +286,8 @@ label {
     float: left;
     margin-top: 5px;
     margin-right: 10px;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 }
 
 .title {
@@ -296,13 +296,13 @@ label {
 }
 
 #titlefont1 {
-    font-size: 10px;
+    font-size: 16px;
     font-weight: bold;
     color: #ff001e;
 }
 
 #titlefont2 {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: bold;
     color: #1ab400;
 }
@@ -311,7 +311,7 @@ label {
     float: left;
     margin-left: 1px;
     display: block;
-    width: 355px;
+    width: 360px;
     height: 100%;
     max-width: 100%;
     background-color: #ffffff;
@@ -422,6 +422,7 @@ label {
 }
 
 .sidebar-wrapper {
+    top: 3%;
     width: 100%;
     height: 100%;
     position: relative;

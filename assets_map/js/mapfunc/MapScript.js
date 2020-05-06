@@ -190,7 +190,7 @@ $.getJSON("assets_map/data/point_demo.geojson", function (data_quantrac) {
     };
     add_quantrac(data_quantrac, map);
 
-    /*** Legend ***/
+    /*** Legend
     var quantrac_legend = L.control({position: "topleft"});
     quantrac_legend.onAdd = map => {
         var div = L.DomUtil.create('div', 'info legend');
@@ -229,16 +229,16 @@ $.getJSON("assets_map/data/point_demo.geojson", function (data_quantrac) {
         var draggable = new L.Draggable(div);
         draggable.enable();
         return div;
-    };
+    }; ***/
 
-    /*** Control Legend ***/
+    /*** Control Legend
     $('#switch_legend').change(function () {
         if ($(this).prop('checked')) {
             map.addControl(quantrac_legend);
         } else {
             map.removeControl(quantrac_legend);
         }
-    });
+    }); ***/
 })
 
 map.addControl(
