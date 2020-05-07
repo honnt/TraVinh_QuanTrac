@@ -1,23 +1,5 @@
 var map, featureList;
 
-/*---- Full Screen Switch Toggle
-$(document).on("keydown", function (e) {
-    // console.log(e.keyCode);
-    if (e.keyCode === 27 || e.keyCode === 122) return false
-});
-
-$(document).ready(function () {
-    $('#switchbutton_screen').change(function () {
-        if ($(this).prop('checked')) {
-            screenfull.request();
-            console.log("on");
-        } else {
-            screenfull.exit();
-            console.log("off");
-        }
-    });
-}) ----*/
-
 $(window).resize(function () {
     sizeLayerControl();
 });
@@ -29,7 +11,8 @@ $(document).on("click", ".feature-row", function (e) {
 
 if (!("ontouchstart" in window)) {
     $(document).on("mouseover", ".feature-row", function (e) {
-        highlight.clearLayers().addLayer(L.circleMarker([$(this).attr("lat"), $(this).attr("lng")], highlightStyle));
+        highlight.clearLayers().addLayer(L.circleMarker([$(this).attr("lat"),
+            $(this).attr("lng")], highlightStyle));
     });
 }
 
@@ -242,16 +225,16 @@ $(document).ready(function () {
     table.buttons().container()
         .appendTo('#table_threshold_wrapper .col-md-12:eq(0)');
 
-    $('<button class="dt-button buttons-html5 btn btn-sm active" id="fillter_1h"' +
+    $('<button class="dt-button buttons-html5 btn btn-sm active" id="fillter_1h" ' +
         'type="button" aria-controls="table_threshold" tabindex="0" ' +
         'style="margin-right: 4.5px; margin-left: 30%;">' +
             '<span>1 giờ</span>' +
         '</button>' +
-        '<button class="dt-button buttons-html5 btn btn-sm" id="fillter_8h"' +
+        '<button class="dt-button buttons-html5 btn btn-sm" id="fillter_8h" ' +
         'type="button" aria-controls="table_threshold" tabindex="0" style="margin-right: 4.5px;">' +
             '<span>8 giờ</span>' +
         '</button>' +
-        '<button class="dt-button buttons-html5 btn btn-sm" id="fillter_24h"' +
+        '<button class="dt-button buttons-html5 btn btn-sm" id="fillter_24h" ' +
         'type="button" aria-controls="table_threshold" tabindex="0">' +
             '<span>24 giờ</span>' +
         '</button>'
@@ -272,3 +255,8 @@ $(document).ready(function () {
         }
     });
 });
+
+$.getJSON("assets_map/data/data_viewgroupchart_demo.json", function (data_viewgroupchart_demo) {
+    render_groupchart_quantrac("chart_stats_para_1", data_viewgroupchart_demo, "Nhu cầu Oxy hóa học",
+        "Thời gian", "Nhu cầu Oxy hóa học");
+})

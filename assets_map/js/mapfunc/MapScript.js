@@ -146,7 +146,7 @@ $.getJSON("assets_map/data/point_demo.geojson", function (data_quantrac) {
                     "</th><td style='text-align: center'>" + "33.32" + "</td></tr>";
 
                 $.getJSON("assets_map/data/data_viewchart_demo.json", function (data_viewchart_demo) {
-                    render_line_chart("chart1", data_viewchart_demo, "Nhu cầu Oxy hóa học",
+                    render_chart_quantrac("chart_para_1", data_viewchart_demo, "Nhu cầu Oxy hóa học",
                         "Thời gian", "Nhu cầu Oxy hóa học");
                 })
 

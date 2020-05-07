@@ -15,11 +15,11 @@
 + Hiển thị kết quả thống kê
     + Giới hạn số lượng trạm so sánh: 3 ==> Bảng biểu và chart hiển thị tối đa 3 trạm
     + Bảng dữ liệu báo cáo: đề xuất làm Dropdown hiển thị Chart
-+ Nút toggle thay đổi (xóa ==> thay đổi cơ chế làm mờ)
-+ Làm gọn toogle (bấm xố dropdown nhưng không làm nút, cái đầu tiên mặc định mở)
-+ Bỏ chú thích bản đồ
-+ Làm baner to hơn
-+ Bỏ nút Copy và Print, đổi màu đỏ cho các nút hiển thị 1 giờ, 8 giờ và 24 giờ
++ Nút toggle thay đổi (xóa ==> thay đổi cơ chế làm mờ)  ==> làm nút toggle nhỏ hơn
++ Làm gọn panel heading (bấm xố dropdown nhưng không làm nút, cái đầu tiên mặc định mở) ==> done
++ Bỏ chú thích bản đồ (done)
++ Làm baner to hơn (done)
++ Bỏ nút Copy và Print, đổi màu đỏ cho các nút hiển thị 1 giờ, 8 giờ và 24 giờ (done)
 + Tool chạy batch files để ở trang Admin (tool chạy bằng Php)
-+ Làm phần Scrollbar width to hơn
++ Làm phần Scrollbar width to hơn (done)
 

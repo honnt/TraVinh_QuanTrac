@@ -71,7 +71,7 @@
     <script src="vendor/chart/AmChart/core.js"></script>
     <script src="vendor/chart/AmChart/charts.js"></script>
     <script src="vendor/chart/AmChart/maps.js"></script>
-    <script src="vendor/chart/AmChart/animated.js"></script>
+    <script src="vendor/chart/AmChart/themes/animated.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="height: 10%">
@@ -563,8 +563,8 @@
                     </div>
                     <!-- <div class="tab-pane fade" id="data_qt"></div> -->
                     <div class="tab-pane fade" id="chart_data_qt">
-                        <!-- DOM nhiều chart - hiện tại mới chỉ có thể dom Cứng dữ liệu -->
-                        <div id="chart1" class="gender-chart"></div>
+                        <!-- DOM nhiều chart -->
+                        <div id="chart_para_1" class="gender-chart"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -924,16 +924,16 @@
                 </div>
                 <div class="tab-content" id="statistic-result-TabsContent">
                     <div class="tab-pane fade active in" id="chart_qt">
-                        <h5 style="padding-left: 15px">Biểu đồ</h5>
+                        <div id="chart_stats_para_1" class="gender-chart_stats" style="width: 90%"></div>
                     </div>
                     <div class="tab-pane fade" id="table_qt">
-                        <h5 style="padding-left: 15px">Bảng dữ liệu</h5>
+                        <h5 style="padding-left: 15px">Bảng dữ liệu (DataTables)</h5>
                     </div>
                     <div class="tab-pane fade" id="WQI_qt">
-                        <h5 style="padding-left: 15px">Chất lượng nước WQI</h5>
+                        <h5 style="padding-left: 15px">Chất lượng nước WQI (DataTables)</h5>
                     </div>
                     <div class="tab-pane fade" id="AQI_qt">
-                        <h5 style="padding-left: 15px">Chất lượng không khí AQI</h5>
+                        <h5 style="padding-left: 15px">Chất lượng không khí AQI (DataTables)</h5>
                     </div>
                 </div>
                 <div class="modal-footer">

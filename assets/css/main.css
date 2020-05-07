@@ -348,8 +348,12 @@ label {
     margin-top: -2px;
 }
 
-#aboutTabsContent, #statistic-result-TabsContent {
+#aboutTabsContent {
     padding-top: 10px;
+}
+
+#statistic-result-TabsContent {
+    padding-top: 0;
 }
 
 .red {
@@ -386,6 +390,7 @@ label {
 .panel-heading {
     margin-bottom: 2%;
     width: 350px;
+    cursor: pointer;
 }
 
 .panel-body {
@@ -539,6 +544,15 @@ label {
     text-align: center;
 }
 
+/*** Statictis ***/
+.amcharts-amexport-item.amcharts-amexport-item-level-0 {
+    width: 100px !important;
+}
+
+.amcharts-amexport-item.amcharts-amexport-item-level-0 > a {
+    padding-top: 6px !important;
+}
+
 /*** Custom Control Label ***/
 .image-checkbox {
     margin-top: -2px;
@@ -564,8 +578,12 @@ label {
     overflow-x: hidden;
 }
 
-.gender-chart {
+.gender-chart, .gender-chart_stats {
     height: 400px;
+}
+
+.gender-chart_stats {
+    padding-left: 10%;
 }
 
 #search_stats_tramqt {
