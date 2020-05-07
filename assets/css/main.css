@@ -67,12 +67,17 @@ label {
     margin-right: 10px;
 }
 
+.btn-sm, .btn-group-sm > .btn {
+    margin-top: 1px !important;
+}
+
 .btn-default:hover {
     font-weight: bold;
 }
 
 .btn-primary {
-    color: #000000;
+    color: #333;
+    font-weight: bold;
     background-color: #88d7fa;
 }
 
@@ -379,6 +384,7 @@ label {
 }
 
 .panel-heading {
+    margin-bottom: 2%;
     width: 350px;
 }
 
@@ -424,7 +430,7 @@ label {
 .sidebar-wrapper {
     top: 3%;
     width: 100%;
-    height: 100%;
+    height: 97%;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;

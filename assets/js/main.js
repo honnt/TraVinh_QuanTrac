@@ -1,13 +1,12 @@
 var map, featureList;
 
-/*---- Full Screen Switch Toggle ----*/
+/*---- Full Screen Switch Toggle
 $(document).on("keydown", function (e) {
     // console.log(e.keyCode);
     if (e.keyCode === 27 || e.keyCode === 122) return false
 });
 
 $(document).ready(function () {
-    /*** Full Screen ***/
     $('#switchbutton_screen').change(function () {
         if ($(this).prop('checked')) {
             screenfull.request();
@@ -17,7 +16,7 @@ $(document).ready(function () {
             console.log("off");
         }
     });
-})
+}) ----*/
 
 $(window).resize(function () {
     sizeLayerControl();

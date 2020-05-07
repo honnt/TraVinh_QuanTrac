@@ -115,12 +115,12 @@
         </div>
     </div>
 
-    <div id="container">
+    <div id="container" style="top: 10%">
         <div id="sidebar">
             <div class="sidebar-wrapper">
                 <div class="panel panel-default" id="features">
                     <!-- Lớp dữ liệu -->
-                    <div class="panel-heading panel-data-quantrac">
+                    <div class="panel-heading panel-data-quantrac" data-toggle="collapse" href="#data_layer_tramqt">
                         <h3 class="panel-title blue">
                             <i class="fa fa-broadcast-tower"
                                style="font-size: 16px; margin-top: -5px;"></i>&nbsp;&nbsp;&nbsp;Lớp dữ liệu trạm quan trắc
@@ -133,7 +133,7 @@
                             </button> -->
                         </h3>
                     </div>
-                    <div class="panel-body" id="data_layer_tramqt">
+                    <div class="panel-body collapse in" id="data_layer_tramqt">
                         <!-- Trạm quan trắc -->
                         <div class="row panel-map">
                             <div class="col-xs-8 col-md-8">
@@ -143,17 +143,17 @@
                         </div>
                         <div class="row toggle_cus">
                             <div class="col-xs-6 col-md-6">
-                                <input checked data-off="Tắt" data-on="Bật"
+                                <input checked data-off="Tắt" data-on="Bật" data-size="small"
                                        data-style="ios" data-toggle="toggle" id="qt_dat_data" type="checkbox">
                             </div>
                             <div class="nav-titles-icon tramqt_dat_icon">
-                                <i class="icon-checkbox-unchecked2 legend-icon"></i>
+                                <i class="icon-checkbox-unchecked2 legend-icon" style="margin-top: 1%"></i>
                             </div>
                             <label class="nav-titles tramqt_dat_label">Trạm quan trắc đất</label>
                         </div>
                         <div class="row toggle_cus">
                             <div class="col-xs-6 col-md-6">
-                                <input checked data-off="Tắt" data-on="Bật"
+                                <input checked data-off="Tắt" data-on="Bật" data-size="small"
                                        data-style="ios" data-toggle="toggle" id="qt_khongkhi_data" type="checkbox">
                             </div>
                             <div class="nav-titles-icon tramqt_khongkhi_icon">
@@ -163,7 +163,7 @@
                         </div>
                         <div class="row toggle_cus">
                             <div class="col-xs-6 col-md-6">
-                                <input checked data-off="Tắt" data-on="Bật"
+                                <input checked data-off="Tắt" data-on="Bật" data-size="small"
                                        data-style="ios" data-toggle="toggle" id="qt_nuocmat_data" type="checkbox">
                             </div>
                             <div class="nav-titles-icon tramqt_nuocmat_icon">
@@ -173,7 +173,7 @@
                         </div>
                         <div class="row toggle_cus">
                             <div class="col-xs-6 col-md-6">
-                                <input checked data-off="Tắt" data-on="Bật"
+                                <input checked data-off="Tắt" data-on="Bật" data-size="small"
                                        data-style="ios" data-toggle="toggle" id="qt_nuocngam_data" type="checkbox">
                             </div>
                             <div class="nav-titles-icon tramqt_nuocngam_icon">
@@ -183,7 +183,7 @@
                         </div>
                         <div class="row toggle_cus">
                             <div class="col-xs-6 col-md-6">
-                                <input checked data-off="Tắt" data-on="Bật"
+                                <input checked data-off="Tắt" data-on="Bật" data-size="small"
                                        data-style="ios" data-toggle="toggle" id="qt_nuocthai_data" type="checkbox">
                             </div>
                             <div class="nav-titles-icon tramqt_nuocthai_icon">
@@ -231,13 +231,13 @@
 
                     </div>
                     <!-- Tìm kiếm dữ liệu -->
-                    <div class="panel-heading">
+                    <div class="panel-heading" data-toggle="collapse" href="#search_tramqt">
                         <h3 class="panel-title blue">
                             <i class="icon-cog52"
                                style="font-size: 16px; margin-top: -2px;"></i>&nbsp;&nbsp;&nbsp;Tìm kiếm dữ liệu
                         </h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body collapse" id="search_tramqt">
                         <div class="col-xs-12 col-md-12">
                             <i class="fa fa-location-arrow" style="font-size: 16px; margin-top: -2px; color: #999"></i>
                             <span class="panel-search">&nbsp;&nbsp;Tìm kiếm cơ bản</span>
@@ -318,13 +318,13 @@
                         </div> -->
                     </div>
                     <!-- Công cụ hỗ trợ -->
-                    <div class="panel-heading">
+                    <div class="panel-heading" data-toggle="collapse" href="#tools_qt">
                         <h3 class="panel-title blue">
                             <i class="icon-wrench"
                                style="font-size: 16px; margin-top: -2px;"></i>&nbsp;&nbsp;&nbsp;Công cụ hỗ trợ và thống kê quan trắc
                         </h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body collapse" id="tools_qt">
                         <!-- <div class="row toggle_cus">
                             <div class="col-xs-6 col-md-6">
                                 <input data-off="Tắt" data-on="Bật" data-onstyle="success" data-offstyle="danger"
@@ -360,13 +360,13 @@
                         </div>
                     </div>
                     <!-- Hướng dẫn sử dụng -->
-                    <div class="panel-heading">
+                    <div class="panel-heading" data-toggle="collapse" href="#help_qt">
                         <h3 class="panel-title blue">
                             <i class="icon-help"
                                style="font-size: 16px; margin-top: -2px;"></i>&nbsp;&nbsp;&nbsp;Hướng dẫn sử dụng
                         </h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body collapse" id="help_qt">
                         <div class="col-xs-8 col-md-8">
                             <i class="fa fa-file" style="font-size: 16px; margin-top: -2px; color: #999"></i>
                             <a class="panel-help" href="assets/text/TaiLieuHuongDanSuDung.doc">Tài liệu hướng dẫn</a>
