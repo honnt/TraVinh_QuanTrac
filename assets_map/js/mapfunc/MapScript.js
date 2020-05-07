@@ -189,56 +189,6 @@ $.getJSON("assets_map/data/point_demo.geojson", function (data_quantrac) {
         });
     };
     add_quantrac(data_quantrac, map);
-
-    /*** Legend
-    var quantrac_legend = L.control({position: "topleft"});
-    quantrac_legend.onAdd = map => {
-        var div = L.DomUtil.create('div', 'info legend');
-
-        div.innerHTML =
-            "<div class='legend-content'>" +
-            "<div class='legend'>" +
-            ("<p class='title-legend-chart'>Ký hiệu trạm quan trắc</p>") +
-            ("<div class='container_poi'>" +
-                "<div class='overlay_poi' style='background-color: #cf540f;'></div>" +
-                "<div class='icon-checkbox-unchecked2 iconmoon_poi' style=''></div>" +
-                "<span class='label_legend_poi_iconmoon'>" + "Trạm quan trắc đất" + "</span>" +
-                "</div>") + '<br>' +
-            ("<div class='container_poi'>" +
-                "<div class='overlay_poi' style='background-color: #606060;'></div>" +
-                "<div class='icon-air iconmoon_poi'></div>" +
-                "<span class='label_legend_poi_iconmoon' style=''>" + "Trạm quan trắc không khí" + "</span>" +
-                "</div>") + '<br>' +
-            ("<div class='container_poi'>" +
-                "<div class='overlay_poi' style='background-color: #009cff;'></div>" +
-                "<div class='icon-wave2 iconmoon_poi'></div>" +
-                "<span class='label_legend_poi_iconmoon'>" + "Trạm quan trắc nước mặt" + "</span>" +
-                "</div>") + '<br>' +
-            ("<div class='container_poi'>" +
-                "<div class='overlay_poi' style='background-color: #276a91;'></div>" +
-                "<div class='icon-graph iconmoon_poi'></div>" +
-                "<span class='label_legend_poi_iconmoon' style=''>" + "Trạm quan trắc nước ngầm" + "</span>" +
-                "</div>") + '<br>' +
-            ("<div class='container_poi'>" +
-                "<div class='overlay_poi' style='background-color: #009d27;'></div>" +
-                "<div class='icon-alert iconmoon_poi' style='margin-top: 6px'></div>" +
-                "<span class='label_legend_poi_iconmoon' style=''>" + "Trạm quan trắc nước thải" + "</span>" +
-                "</div>") +
-            "</div>" +
-            "</div>";
-        var draggable = new L.Draggable(div);
-        draggable.enable();
-        return div;
-    }; ***/
-
-    /*** Control Legend
-    $('#switch_legend').change(function () {
-        if ($(this).prop('checked')) {
-            map.addControl(quantrac_legend);
-        } else {
-            map.removeControl(quantrac_legend);
-        }
-    }); ***/
 })
 
 map.addControl(
