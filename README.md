@@ -10,11 +10,12 @@
 ### Note giao diện (Thư viện)
 + Phần export biểu đồ: sử dụng export của Amchart
 + Phần export bảng dữ liệu: sử dụng export của Datatables
++ Sửa Modal Exporting trong Amchart ==> Sửa trong thư viện Core.js
 
 ### Note giao diện (đề xuất)
 + Hiển thị kết quả thống kê
-    + Giới hạn số lượng trạm so sánh: 3 ==> Bảng biểu và chart hiển thị tối đa 3 trạm
-    + Bảng dữ liệu báo cáo: đề xuất làm Dropdown hiển thị Chart
+    + Giới hạn số lượng trạm so sánh: 3 ==> Bảng biểu và chart hiển thị tối đa 3 trạm (done)
+    + Bảng dữ liệu báo cáo: đề xuất làm Dropdown hiển thị Chart (pending)
 + Nút toggle thay đổi (xóa ==> thay đổi cơ chế làm mờ)  ==> làm nút toggle nhỏ hơn
 + Làm gọn panel heading (bấm xố dropdown nhưng không làm nút, cái đầu tiên mặc định mở) ==> done
 + Bỏ chú thích bản đồ (done)

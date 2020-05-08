@@ -173,8 +173,9 @@ function render_groupchart_quantrac(div_id, data_chart, name_title, key, data) {
         title.fontFamily = "Arial";
         title.marginBottom = 30;
 
-        /*** Delay Time Export
-        chart.exporting.timeoutDelay = 500; ***/
+        /*** Delay Time Export ***/
+        chart.exporting.timeoutDelay = 500;
+
         chart.exporting.menu = new am4core.ExportMenu();
         chart.exporting.menu.align = "left";
         chart.exporting.menu.verticalAlign = "top";
