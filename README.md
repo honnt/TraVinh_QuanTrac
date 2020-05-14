@@ -24,3 +24,10 @@
 + Tool chạy batch files để ở trang Admin (tool chạy bằng Php)
 + Làm phần Scrollbar width to hơn (done)
 
++ Hiện số liệu trạm quan trắc:
+    + Đối với trạm tự động: có hiện chart
+    + Đối với trạm bán tự động: không hiện chart nhưng hiện bảng số liệu 
+    Datatables cho từng mẫu (không hiện số mới nhất)
+    + Dom nhiều thuộc tính từ DB
+    + Các mẫu theo hàng, chí tiêu theo hàng (Scrollbar ngang)
+

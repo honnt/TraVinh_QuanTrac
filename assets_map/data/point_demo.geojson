@@ -11,6 +11,25 @@
 		{
 			"type": "Feature",
 			"properties": {
+				"id": 2,
+				"tentram": "Trạm Demo 2",
+				"loaihinh": "Nước mặt",
+				"loaitram": "Bán tự động",
+				"quanhuyen": "Huyện Châu Thành",
+				"xcoord": 106.31953172237258,
+				"ycoord": 9.707412560658382
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					106.31953172237258,
+					9.707412560658382
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
 				"id": 1,
 				"tentram": "Trạm Demo",
 				"loaihinh": "Đất",

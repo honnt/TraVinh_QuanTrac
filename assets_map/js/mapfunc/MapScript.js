@@ -145,6 +145,7 @@ $.getJSON("assets_map/data/point_demo.geojson", function (data_quantrac) {
                     "<tr><th class='blue' style='text-align: center'>" + "Nhu cầu Oxy hóa học" +
                     "</th><td style='text-align: center'>" + "33.32" + "</td></tr>";
 
+                /*** View Chart cho trạm tự động ***/
                 $.getJSON("assets_map/data/data_viewchart_demo.json", function (data_viewchart_demo) {
                     render_chart_quantrac("chart_para_1", data_viewchart_demo, "Nhu cầu Oxy hóa học",
                         "Thời gian", "Nhu cầu Oxy hóa học");
@@ -152,16 +153,23 @@ $.getJSON("assets_map/data/point_demo.geojson", function (data_quantrac) {
 
                 layer.on({
                     click: function (e) {
-                        $("#feature-title").html(feat.properties.tentram);
-                        $("#info_qt").html(content_info);
-                        $("#data_qt").html(content_data_qt);
-                        /* $("#chart_qt").html(content_chart); */
+                        if (feat.properties.loaitram == "Tự động") {
+                            $(".feature-title").html(feat.properties.tentram);
+                            $(".info_qt").html(content_info);
+                            $("#data_qt").html(content_data_qt);
+                            /* $("#chart_qt").html(content_chart); */
 
-                        $("#featureModal").modal("show");
+                            $("#featureModal").modal("show");
+                        } else {
+                            $(".feature-title").html(feat.properties.tentram);
+                            $(".info_qt").html(content_info);
+
+                            $("#featureModal-btd").modal("show");
+                        }
                         pulse_marker = L.marker([feat.geometry.coordinates[1],
                             feat.geometry.coordinates[0]], {
                             icon: pulsingIcon
-                        }).addTo(map)
+                        }).addTo(map);
                     }
                 });
 

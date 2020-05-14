@@ -46,7 +46,7 @@ label {
 }
 
 .toggle-handle {
-    height: 32px !important;
+    height: 26px !important;
     width: 32px !important;
     margin-left: -30px !important;
     margin-right: -30px !important;
@@ -356,6 +356,10 @@ label {
     padding-top: 0;
 }
 
+.green {
+    color: #00a709;
+}
+
 .red {
     color: #ff001e;
 }
@@ -562,7 +566,7 @@ label {
 }
 
 /*** Modal ***/
-#info_qt, #data_qt, #chart_data_qt {
+.info_qt, #data_qt, #chart_data_qt {
     padding: 15px;
 }
 
@@ -613,7 +617,12 @@ label {
 }
 
 .modal-threshold {
-    margin-top: 3.3%;
+    margin-top: 4.75%;
+    width: 80%;
+}
+
+.modal-sample {
+    margin-top: 10%;
     width: 80%;
 }
 
@@ -623,7 +632,7 @@ label {
     overflow-x: hidden;
 }
 
-.modal-stats-search, .modal-stats-para  {
+.modal-stats-search, .modal-stats-para {
     margin-top: 3.75%;
     height: 90%;
     border-radius: 0%;
@@ -674,6 +683,7 @@ td.details-control {
     background: url('../images/details_open.png') no-repeat center center;
     cursor: pointer;
 }
+
 tr.shown td.details-control {
     background: url('../images/details_close.png') no-repeat center center;
 }
@@ -704,7 +714,7 @@ span .paginate_button {
     margin-left: -20%;
 }
 
-#table_threshold_wrapper .btn.active{
+#table_threshold_wrapper .btn.active {
     color: #fff;
     background-color: #ff001e;
     border-color: #ff223b;

@@ -500,7 +500,7 @@
                     <h4 class="modal-title">Đăng nhập</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="contact-form">
+                    <form class="user-form">
                         <fieldset>
                             <div class="form-group">
                                 <i class="icon-user" style="font-size: 14px; margin: -2px 2px 0px 0px"></i>
@@ -528,13 +528,13 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <!-- Modal thuộc tính điểm Quan trắc -->
+    <!-- Modal thuộc tính điểm Quan trắc (cho trạm tự động) -->
     <div class="modal fade" id="featureModal" role="dialog" tabindex="-1">
-        <div class="modal-dialog" style="margin-top: 0; margin-left: 22.5%">
+        <div class="modal-dialog" style="margin-top: 4.85%; margin-left: 23.5%">
             <div class="modal-content">
                 <div class="modal-header">
                     <button aria-hidden="true" class="close closemodal" data-dismiss="modal" type="button">&times;</button>
-                    <h4 class="modal-title text-primary" id="feature-title"></h4>
+                    <h4 class="modal-title text-primary feature-title"></h4>
                 </div>
                 <div class="modal-body" id="feature-info">
                     <ul class="nav nav-tabs nav-justified" id="">
@@ -555,7 +555,7 @@
                     <div class="tab-pane fade active in" id="info_data_qt">
                         <i class="icon-info3" style="font-size: 16px; margin-top: -2px; padding-left: 15px"></i>
                         &nbsp;Thông tin trạm
-                        <div id="info_qt"></div>
+                        <div class="info_qt"></div>
                         <i class="icon-table" style="font-size: 16px; margin-top: -2px; padding-left: 15px"></i>
                         &nbsp;Số liệu mới nhất
                         <div id="data_qt" style="padding-right: 10px"></div>
@@ -573,11 +573,89 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+    <!-- Modal thuộc tính điểm Quan trắc (cho trạm bán tự động) -->
+    <div class="modal fade" id="featureModal-btd" role="dialog" tabindex="-1">
+        <div class="modal-dialog" style="margin-top: 4.85%; margin-left: 23.5%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" class="close closemodal" data-dismiss="modal" type="button">&times;</button>
+                    <h4 class="modal-title text-primary feature-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <i class="icon-info3" style="font-size: 16px; margin-top: -2px; padding-left: 0px"></i>
+                        &nbsp;Thông tin trạm
+                        <div class="info_qt" style="padding: 10px 0 10px 0"></div>
+                        <i class="icon-database-time2" style="font-size: 16px;
+                        margin-top: -2px; padding-left: 0px"></i>
+                        &nbsp;Xem số liệu theo từng đợt
+                    </div>
+                    <form class="filter-time-form">
+                        <fieldset>
+                            <div class="form-group" style="padding-top: 5px">
+                                <div class="col-xs-2 col-md-2" style="margin-top: 1%"><b>Từ ngày</b></div>
+                                <div class="form-group col-xs-4 col-md-4">
+                                    <input class="form-control" id="" type="date">
+                                </div>
+                                <div class="col-xs-2 col-md-2" style="margin-top: 1%"><b>Đến ngày</b></div>
+                                <div class="form-group col-xs-4 col-md-4">
+                                    <input class="form-control" id="" type="date">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" data-dismiss="modal" type="submit" id="sample-btn">Xem dữ liệu</button>
+                    <button class="btn btn-default closemodal" data-dismiss="modal" type="button">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Modal danh sách mẫu/đợt của trạm bán tự động -->
+    <div class="modal fade" id="sampleModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-sample">
+            <div class="modal-content" style="border-radius: 0">
+                <div class="modal-header" style="border-bottom-color: #00a709">
+                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+                    <h4 class="modal-title green" style="font-weight: bold; text-transform: uppercase">
+                        <i class="icon-table2 green" style="font-size: 16px; margin-top: -2px"></i>
+                        &nbsp;Thông tin dữ liệu
+                    </h4>
+                </div>
+                <div class="modal-body modal-body-sample">
+                    <!-- Demo bảng vượt ngưỡng -->
+                    <table class="table table-striped table-hover table-bordered table-condensed table-responsive"
+                           id="table_sample">
+                        <thead>
+                        <tr class="bg-success" role="row" style="color: #000">
+                            <th scope="col"></th>
+                            <th scope="col">Tên Mẫu</th>
+                            <!-- Ngày và giờ lấy mẫu gộp chung -->
+                            <th scope="col">Thời gian lấy mẫu</th>
+                            <th scope="col">Ngày phân tích mẫu</th>
+                            <th scope="col">Vị trí lấy mẫu</th>
+                            <th scope="col">Thời tiết</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Dom data vượt ngưỡng -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal danh sách Vượt ngưỡng -->
     <div class="modal fade" id="thresholdModal" role="dialog" tabindex="-1">
         <div class="modal-dialog modal-threshold">
             <div class="modal-content" style="border-radius: 0">
-                <div class="modal-header" style="border-bottom-color: #ff6810">
+                <div class="modal-header" style="border-bottom-color: #ee0000">
                     <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
                     <h4 class="modal-title red" style="font-weight: bold; text-transform: uppercase">
                         <i class="icon-warning red" style="font-size: 16px; margin-top: -2px"></i>
@@ -621,7 +699,7 @@
                     </h4>
                 </div>
                 <div class="modal-body modal-body-statistic">
-                    <form class="contact-form">
+                    <form class="statistic-form">
                         <fieldset>
                             <div class="form-group">
                                 <div class="col-xs-5 col-md-5 modal-advanced-titles">

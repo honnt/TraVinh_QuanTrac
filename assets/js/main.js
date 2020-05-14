@@ -39,6 +39,13 @@ $("#threshold-btn").click(function () {
     return false;
 });
 
+/*---- Modal Sample ----*/
+$("#sample-btn").click(function () {
+    $("#sampleModal").modal("show");
+    $(".navbar-collapse.in").collapse("hide");
+    return false;
+});
+
 /*---- Modal Statistic ----*/
 $("#statistic-btn").click(function () {
     $("#statisticModal").modal("show");
@@ -175,8 +182,76 @@ function format(d) {
 }
 
 $(document).ready(function () {
-    var table = $('#table_threshold').DataTable({
-        ajax: "assets_map/data/object.json",
+    /*** Datatable Mẫu từng trạm ***/
+    var table_sample = $('#table_sample').DataTable({
+        ajax: "assets_map/data/object_sample.json",
+        columns: [
+            {
+                "className": 'details-control',
+                "orderable": false,
+                "data": null,
+                "defaultContent": ''
+            },
+            {"data": "sampleid"},
+            {"data": "time_dateOfSamping"},
+            {"data": "dateOfAnalysis"},
+            {"data": "sample_loc"},
+            {"data": "sample_weather"}
+        ],
+        order: [[1, 'asc']],
+
+        dom: "<'row'<'col-sm-7'B><'col-sm-3'l><'col-sm-2'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+        buttons: [
+            // {extend: 'copy', className: 'btn btn-info btn-sm'},
+            {extend: 'pdf', className: 'btn btn-success btn-sm'},
+            // {extend: 'print', className: 'btn btn-info btn-sm'},
+            {extend: 'excel', className: 'btn btn-success btn-sm'}
+        ],
+        paging: true,
+        autoWidth: false,
+        "language": {
+            pagingType: "full_numbers",
+            search: '<span>Tìm kiếm:</span> _INPUT_',
+            searchPlaceholder: 'Gõ để tìm...',
+            paginate: {
+                'first': 'First',
+                'last': 'Last',
+                'next': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Trước</span>' :
+                    '<span style="font-size:13px;">Sau</span>',
+                'previous': $('html').attr('dir') == 'rtl' ? '<span style="font-size:13px;">Sau</span>' :
+                    '<span style="font-size:13;">Trước</span>'
+            },
+            sLengthMenu: "<span>Hiển thị&nbsp;</span> _MENU_<span> kết quả</span>",
+            sZeroRecords: "Không tìm thấy kết quả",
+            sInfo: "Hiển thị _START_ đến _END_ trên _TOTAL_ dòng",
+            sInfoFiltered: "(tất cả _MAX_ dòng)",
+            sInfoEmpty: "Hiển thị 0 đến _END_ trên _TOTAL_ dòng",
+        },
+    });
+
+    table_sample.buttons().container()
+        .appendTo('#table_threshold_wrapper .col-md-12:eq(0)');
+
+    $('#table_sample tbody').on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = table_sample.row(tr);
+
+        if (row.child.isShown()) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        } else {
+            // Open this row
+            row.child(format(row.data())).show();
+            tr.addClass('shown');
+        }
+    });
+
+    /*** Datatable Vượt ngưỡng ***/
+    var table_threshold = $('#table_threshold').DataTable({
+        ajax: "assets_map/data/object_vuotnguong.json",
         columns: [
             {
                 "className": 'details-control',
@@ -222,7 +297,7 @@ $(document).ready(function () {
         },
     });
 
-    table.buttons().container()
+    table_threshold.buttons().container()
         .appendTo('#table_threshold_wrapper .col-md-12:eq(0)');
 
     $('<button class="dt-button buttons-html5 btn btn-sm active" id="fillter_1h" ' +
@@ -242,7 +317,7 @@ $(document).ready(function () {
 
     $('#table_threshold tbody').on('click', 'td.details-control', function () {
         var tr = $(this).closest('tr');
-        var row = table.row(tr);
+        var row = table_threshold.row(tr);
 
         if (row.child.isShown()) {
             // This row is already open - close it
