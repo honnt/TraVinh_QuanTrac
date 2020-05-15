@@ -95,13 +95,13 @@ label {
 .btn-success:hover {
     font-weight: bold;
     color: #000;
-    background-color: #a2ffa1;
+    background-color: #32b42e;
 }
 
 .btn-success:focus {
     font-weight: bold;
     color: #000;
-    background-color: #a2ffa1;
+    background-color: #32b42e;
     border-color: #009d27;
 }
 
