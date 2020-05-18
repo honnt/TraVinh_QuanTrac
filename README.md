@@ -31,3 +31,4 @@
     + Dom nhiều thuộc tính từ DB
     + Các mẫu theo hàng, chí tiêu theo hàng (Scrollbar ngang)
 
+### Note kết nối Service Php Postgress

@@ -767,7 +767,7 @@ span .paginate_button {
     }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
     .navbar-nav {
         float: right;
     }
