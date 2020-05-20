@@ -32,3 +32,5 @@
     + Các mẫu theo hàng, chí tiêu theo hàng (Scrollbar ngang)
 
 ### Note kết nối Service Php Postgress
++ Tạo file config Php (Thông tin kết nối database)
++ Tạo file Geojson từ truy vấn Php PostgreSQL (https://stackoverflow.com/questions/31885031/formatting-json-to-geojson-via-php)
