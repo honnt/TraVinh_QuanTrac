@@ -11,8 +11,22 @@
         exit;
     }
 
-    /*** Chuyển định dạng từ Array sang Geojson ***/
+    /*** Chuyển định dạng từ Array sang Json ***/
+    $data = array();
     while ($row = pg_fetch_assoc($result)) {
-       var_dump(json_encode($row));
+        $data[] = $row;
     }
+
+    $jsonData = json_encode($data);
+    $original_data = json_decode($jsonData, true);
+    $option = array();
+    foreach ($original_data as $key => $value) {
+        $option[] = array(
+            'id' => $value['id'],
+            'name' => $value['name']
+        );
+    }
+
+    $final_data = json_encode($option, JSON_PRETTY_PRINT);
+    echo $final_data;
 ?>

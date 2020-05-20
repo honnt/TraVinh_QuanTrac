@@ -16,8 +16,8 @@
                             "organization"."name" "organizationName", 
                             "enterprise"."name" "enterpriseName", 
                             "basin"."name" "basinName", 
-                            "location"."name" "locationName"
-                            /* "district"."name" "districtName" */ 
+                            "location"."name" "locationName",
+                            "district"."name" "districtName"
                             
                         FROM "Observationstation" "station"
                         LEFT JOIN "Category" "category" ON "category"."id" = "station"."categoryid"
@@ -25,7 +25,7 @@
                         LEFT JOIN "Enterprise" "enterprise" ON "enterprise"."id" = "station"."enterpriseid"
                         LEFT JOIN "Basin" "basin" ON "basin"."id" = "station"."basinid"
                         LEFT JOIN "Location" "location" ON "location"."id" = "station"."locationid"
-                        /* LEFT JOIN "District" "district" ON "district"."id" = "station"."districtid" */
+                        LEFT JOIN "District" "district" ON "district"."id" = "station"."districtid"
                             
                         ORDER BY "station"."name" ASC';
     $result = pg_query($travinh_db, $querry_tramqt);
@@ -54,7 +54,7 @@
                 'categoryName' => $value['categoryName'],
                 'basinName' => $value['basinName'],
                 'enterpriseName' => $value['enterpriseName'],
-                /* 'districtName' => $value['districtName'], */
+                'districtName' => $value['districtName'],
                 'locationName' => $value['locationName'],
                 'obstypes' => $value['obstypes'],
                 'establishyear' => $value['establishyear'],

@@ -31,6 +31,8 @@
     + Dom nhiều thuộc tính từ DB
     + Các mẫu theo hàng, chí tiêu theo hàng (Scrollbar ngang)
 
-### Note kết nối Service Php Postgress
+### Note kết nối Service Php PostgreSQL
 + Tạo file config Php (Thông tin kết nối database)
-+ Tạo file Geojson từ truy vấn Php PostgreSQL (link: https://stackoverflow.com/questions/31885031/formatting-json-to-geojson-via-php)
++ Tạo file Geojson từ truy vấn Php PostgreSQL 
+(link: https://stackoverflow.com/questions/31885031/formatting-json-to-geojson-via-php)
++ DOM option: https://www.codebyamir.com/blog/populate-a-select-dropdown-list-with-json

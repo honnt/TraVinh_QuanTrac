@@ -98,7 +98,7 @@ var pulsingIcon = L.icon.pulse({
 function markerOnClick(e) {
     var latLngs = [e.target.getLatLng()];
     var lat = latLngs[0]['lat'];
-    var lng = latLngs[0]['lng'] - 0.005;
+    var lng = latLngs[0]['lng'] - 0.01;
     var markerBounds = L.latLngBounds([lat, lng], [lat, lng]);
     map.fitBounds(markerBounds, {
         maxZoom: 15
@@ -159,7 +159,7 @@ $.getJSON("services/call_elec_board.php", function(data_bangdientu) {
                         enterpriseName_qt + "</td></tr>" +
                         "<tr>" +
                         "<th class='brown'><i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>" +
-                        "&nbsp;Địa điểm</th><td>" + feat.properties.districtid + "</td>" +
+                        "&nbsp;Địa điểm</th><td>" + feat.properties.districtName + "</td>" +
                         "<th class='brown'><i class='icon-server' style='font-size: 16px; margin-top: -2px'></i>" +
                         "&nbsp;Loại trạm</th><td>" + feat.properties.categoryName + "</td></tr>" +
                         "<tr><th class='brown'><i class='icon-lab' style='font-size: 16px; margin-top: -2px'></i>" +
@@ -189,7 +189,8 @@ $.getJSON("services/call_elec_board.php", function(data_bangdientu) {
 
                     layer.on({
                         click: function (e) {
-                            if (feat.properties.loaitram == "Tự động" || feat.properties.loaitram == "Doanh nghiệp") {
+                            if (feat.properties.categoryName == "Tự động"
+                                || feat.properties.categoryName == "Doanh nghiệp") {
                                 $(".feature-title").html(feat.properties.name);
                                 $(".info_qt").html(content_info);
                                 $("#data_qt").html(content_data_qt);
@@ -217,7 +218,7 @@ $.getJSON("services/call_elec_board.php", function(data_bangdientu) {
                     /*** Tạo mảng quantrac_search ***/
                     quantrac_search.push({
                         name: feat.properties.name,
-                        quanhuyen: feat.properties.districtid,
+                        quanhuyen: feat.properties.districtName,
                         loaihinh: feat.properties.obstypes,
                         loaitram: feat.properties.categoryName,
                         source: "quantrac_search",

@@ -40,7 +40,7 @@ $(document).one("ajaxStop", function () {
     var quantrac_districtBH = new Bloodhound({
         name: "quantrac_search",
         datumTokenizer: function (d) {
-            return Bloodhound.tokenizers.whitespace(d.address);
+            return Bloodhound.tokenizers.whitespace(d.quanhuyen);
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         local: quantrac_search,
@@ -122,7 +122,7 @@ $(document).one("ajaxStop", function () {
     }, {
         /*** Huyện/thành phố quan trắc ***/
         name: "quantrac_search",
-        displayKey: "address",
+        displayKey: "quanhuyen",
         source: quantrac_districtBH.ttAdapter(),
         templates: {
             header: "<h4 class='typeahead-header'>" +
