@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/services/call_elec_board.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/database/FullSoLieuTV_20052020_0858.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/database/FullSoLieuTV_20052020_0900.backup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_map/js/mapfunc/MapSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets_map/js/mapfunc/MapSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/call_obser_station.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/call_obser_station.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +28,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapVS_chart.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets/js/option_customize/option_stats.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/assets/js/option_customize/option_searches.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/index.html" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapVS_data.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/assets_map/js/mapfunc/MapSearch.js" root0="SKIP_INSPECTION" />
@@ -44,6 +39,7 @@
     <setting file="file://$PROJECT_DIR$/assets_map/css/MapStyle.css" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/services/call_elec_board.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/assets/js/config.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/services/call_categories_option.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/assets/js/main.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/services/config.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/services/call_obser_station.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
@@ -101,7 +97,7 @@
       <workItem from="1589783425249" duration="4417000" />
       <workItem from="1589794597367" duration="2699000" />
       <workItem from="1589850721002" duration="14878000" />
-      <workItem from="1589935351873" duration="15651000" />
+      <workItem from="1589935351873" duration="18909000" />
     </task>
     <task id="LOCAL-00001" summary="TraVinh_QuanTrac">
       <created>1588737118984</created>
@@ -257,7 +253,28 @@
       <option name="project" value="LOCAL" />
       <updated>1589858850207</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="TraVinh_QuanTrac">
+      <created>1589959926206</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1589959926206</updated>
+    </task>
+    <task id="LOCAL-00024" summary="TraVinh_QuanTrac">
+      <created>1589960700968</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1589960700968</updated>
+    </task>
+    <task id="LOCAL-00025" summary="TraVinh_QuanTrac">
+      <created>1589963144544</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1589963144544</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,11 +286,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="TraVinh_QuanTrac" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1589858848933">
+    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1589963143902">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905135465" />
-    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1589858848933" />
+    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1589963143902" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1589462260203" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588751106467" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1589859808583">
@@ -281,10 +298,10 @@
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588132046198" />
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1589859808583" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1589957662582">
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1589960682112">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1589957662582" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1589960682112" />
     <state x="277" y="59" key="SettingsEditor" timestamp="1589783456571">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -293,11 +310,11 @@
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1589783456571" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1589462310049" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1588751143323" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1589858854895">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1589963164136">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905139877" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1589858854895" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1589963164136" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1589462279530" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588751113279" />
     <state x="444" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1589850739830">
