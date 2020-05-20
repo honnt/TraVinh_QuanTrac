@@ -33,4 +33,4 @@
 
 ### Note kết nối Service Php Postgress
 + Tạo file config Php (Thông tin kết nối database)
-+ Tạo file Geojson từ truy vấn Php PostgreSQL (https://stackoverflow.com/questions/31885031/formatting-json-to-geojson-via-php)
++ Tạo file Geojson từ truy vấn Php PostgreSQL (link: https://stackoverflow.com/questions/31885031/formatting-json-to-geojson-via-php)
