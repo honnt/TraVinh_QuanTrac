@@ -11,14 +11,15 @@
                             "station"."coordx", "station"."coordy",
                             "station"."establishyear", "station"."terminatedate", 
                             "station"."maintenance", "station"."active", 
-                            "station"."the_geom", "station"."obstypes",
+                            "station"."the_geom",
                             "category"."name" "categoryName", 
                             "organization"."name" "organizationName", 
                             "enterprise"."name" "enterpriseName", 
                             "basin"."name" "basinName", 
                             "location"."name" "locationName",
-                            "district"."name" "districtName"
-                            
+                            "district"."name" "districtName",
+							string_agg("obs_type"."name", \'; \') "obstype_namelist"
+							
                         FROM "Observationstation" "station"
                         LEFT JOIN "Category" "category" ON "category"."id" = "station"."categoryid"
                         LEFT JOIN "Organization" "organization" ON "organization"."id" = "station"."organizationid"
@@ -26,7 +27,11 @@
                         LEFT JOIN "Basin" "basin" ON "basin"."id" = "station"."basinid"
                         LEFT JOIN "Location" "location" ON "location"."id" = "station"."locationid"
                         LEFT JOIN "District" "district" ON "district"."id" = "station"."districtid"
-                            
+						LEFT JOIN "Obstype_Station" "obs_station" ON "obs_station"."stationid" = "station"."id"
+						LEFT JOIN "ObservationType" "obs_type" ON "obs_type"."id" = "obs_station"."obstypesid"
+						
+                        GROUP BY "station"."id", "category"."name", "organization"."name", 
+                        "enterprise"."name", "basin"."name", "location"."name", "district"."name"
                         ORDER BY "station"."name" ASC';
     $result = pg_query($travinh_db, $querry_tramqt);
     if (!$result) {
@@ -56,11 +61,11 @@
                 'enterpriseName' => $value['enterpriseName'],
                 'districtName' => $value['districtName'],
                 'locationName' => $value['locationName'],
-                'obstypes' => $value['obstypes'],
                 'establishyear' => $value['establishyear'],
                 'terminatedate' => $value['terminatedate'],
                 'maintenance' => $value['maintenance'],
-                'active' => $value['active']
+                'active' => $value['active'],
+                'obstype_namelist' => $value['obstype_namelist']
             ),
             'geometry' => array(
                 'type' => 'Point',

@@ -163,7 +163,7 @@ $.getJSON("services/call_elec_board.php", function(data_bangdientu) {
                         "<th class='brown'><i class='icon-server' style='font-size: 16px; margin-top: -2px'></i>" +
                         "&nbsp;Loại trạm</th><td>" + feat.properties.categoryName + "</td></tr>" +
                         "<tr><th class='brown'><i class='icon-lab' style='font-size: 16px; margin-top: -2px'></i>" +
-                        "&nbsp;Loại hình</th><td>" + feat.properties.obstypes + "</td>" +
+                        "&nbsp;Loại hình</th><td>" + feat.properties.obstype_namelist + "</td>" +
                         "<th class='brown'><i class='icon-office' style='font-size: 14px; " +
                         "margin-top: -2px; margin-left: 1px;'></i>" +
                         "&nbsp;Tổ chức</th><td>" + organizationName_qt + "</td></tr>" +
