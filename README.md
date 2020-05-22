@@ -11,6 +11,7 @@
 + Phần export biểu đồ: sử dụng export của Amchart
 + Phần export bảng dữ liệu: sử dụng export của Datatables
 + Sửa Modal Exporting trong Amchart ==> Sửa trong thư viện Core.js
++ Sửa thư viện comboTreePlugin.js ==> Xóa dòng `this.options.collapse` và sửa file style css
 
 ### Note giao diện (đề xuất)
 + Hiển thị kết quả thống kê
@@ -31,8 +32,15 @@
     + Dom nhiều thuộc tính từ DB
     + Các mẫu theo hàng, chí tiêu theo hàng (Scrollbar ngang)
 
+### Set Up in Xampp
++ Thêm extension cho PostgreSQL: 
+https://askubuntu.com/questions/599921/adminer-none-of-the-supported-php-extensions-mysqli-mysql-pdo-mysql-are-ava/600156#600156
++ Xóa toàn bộ file trong folder `htdocs`
+
 ### Note kết nối Service Php PostgreSQL
 + Tạo file config Php (Thông tin kết nối database)
 + Tạo file Geojson từ truy vấn Php PostgreSQL 
 (link: https://stackoverflow.com/questions/31885031/formatting-json-to-geojson-via-php)
 + DOM option: https://www.codebyamir.com/blog/populate-a-select-dropdown-list-with-json
++ Tạo JSON Nested: 
+https://www.semicolonworld.com/question/32508/add-json-element-to-multidimensional-json-object-php

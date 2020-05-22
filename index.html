@@ -19,6 +19,8 @@
     <link href="assets/css/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="assets/css/icomoon/styles.min.css" rel="stylesheet">
     <link href="assets/css/pretty-checkbox/dist/pretty-checkbox.min.css" rel="stylesheet">
+    <link href="assets/css/material-icon/materialdesignicons.css" rel="stylesheet" >
+    <link href="assets/css/option_tree.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
 
     <!-- Map CSS -->
@@ -41,6 +43,7 @@
     <script src="assets/js/search_plugin/typeahead.bundle.js"></script>
     <script src="assets/js/search_plugin/handlebars.js"></script>
     <script src="assets/js/search_plugin/list.min.js"></script>
+    <script src="assets/js/option_customize/comboTreePlugin.js"></script>
     <!-- Datatables JS -->
     <script src="vendor/jquery/js/jquery.dataTables.min.js"></script>
     <script src="vendor/bootstrap/js/dataTables.bootstrap4.min.js"></script>
@@ -251,33 +254,35 @@
                             <hr class="line-search">
                         </div>
                         <div class="col-xs-8 col-md-8">
-                            <i class="fa fa-atlas" style="font-size: 16px; margin-top: -2px; color: #999"></i>
+                            <i class="mdi mdi-map-search" style="font-size: 16px; margin-top: -2px; color: #999"></i>
                             <span class="panel-search">&nbsp;&nbsp;Tìm kiếm nâng cao</span>
                         </div>
-                        <div class="col-xs-5 col-md-5 search-advanced-titles">
+                        <div class="col-xs-12 col-md-12 search-advanced-titles">
                             <i class="icon-server blue" style="font-size: 14px; margin-top: -2px"></i>
                             <span for="loaitram" style="margin-left: 1px">&nbsp;Loại trạm</span>
                         </div>
-                        <div class="form-group col-xs-7 col-md-7 search-advanced">
+                        <div class="form-group col-xs-12 col-md-12 search-advanced">
                             <select class="form-control" id="loaitram">
                                 <!-- DOM từ DB vào -->
                             </select>
                         </div>
-                        <div class="col-xs-5 col-md-5 search-advanced-titles">
+                        <div class="col-xs-12 col-md-12 search-advanced-titles">
                             <i class="icon-lab blue" style="font-size: 14px; margin-top: -2px"></i>
                             <span for="loaihinh" style="margin-left: 1px">&nbsp;Loại hình</span>
                         </div>
-                        <div class="form-group col-xs-7 col-md-7 search-advanced">
-                            <select class="form-control" id="loaihinh">
-                                <!-- DOM từ DB vào -->
-                            </select>
+                        <div class="form-group col-xs-12 col-md-12 search-advanced">
+                            <input type="text" id="loaihinh" placeholder="Lựa chọn loại hình"
+                                   autocomplete="off"/>
+                            <!-- <select class="form-control" id="loaihinh">
+                                DOM từ DB vào
+                            </select> -->
                         </div>
-                        <div class="col-xs-5 col-md-5 search-advanced-titles">
+                        <div class="col-xs-12 col-md-12 search-advanced-titles">
                             <i class="icon-location3 blue" style="font-size: 14px; margin-top: -2px"></i>
-                            <span for="district" style="margin-left: 1px">&nbsp;Huyện</span>
+                            <span for="district" style="margin-left: 1px">&nbsp;Thành phố, Huyện, Thị xã</span>
                         </div>
-                        <div class="form-group col-xs-7 col-md-7 search-advanced">
-                            <select class="form-control" id="district">
+                        <div class="form-group col-xs-12 col-md-12 search-advanced">
+                            <select class="form-control" id="district" style="text-align: center">
                                 <!-- DOM từ DB vào -->
                             </select>
                         </div>
@@ -286,11 +291,11 @@
                                 <i class="icon-cog5" style="font-size: 16px; margin-top: -1px"></i>&nbsp;&nbsp;Danh sách trạm tìm kiếm
                             </button>
                         </div> -->
-                        <div class="col-xs-5 col-md-5 search-advanced-titles">
+                        <div class="col-xs-12 col-md-12 search-advanced-titles">
                             <i class="icon icon-store blue" style="font-size: 14px; margin-top: -2px"></i>
-                            <span for="quantrac">&nbsp;Trạm</span>
+                            <span for="quantrac">&nbsp;Trạm quan trắc</span>
                         </div>
-                        <div class="form-group col-xs-7 col-md-7 search-advanced">
+                        <div class="form-group col-xs-12 col-md-12 search-advanced">
                             <select class="form-control" id="quantrac">
                                 <!-- DOM từ DB vào -->
                             </select>
@@ -735,10 +740,9 @@
                                     <i class="icon-home4 brown" style="font-size: 16px; margin-top: -2px"></i>
                                     <span for="" class="black" style="margin-left: 1px">&nbsp;Trạm quan trắc</span>
                                 </div>
-                                <div class="form-group col-xs-6 col-md-6 modal-advanced">
-                                    <input class="form-control" type="text" style="width: 119%">
-                                </div>
-                                <div class="form-group col-xs-1 col-md-1 modal-advanced-titles">
+                                <div class="form-group col-xs-7 col-md-7 modal-advanced"
+                                     style="height: 30px !important;">
+                                    <input class="form-control" id="search_quantrac" type="text">
                                     <i class="icon-search4 black" id="search_stats_tramqt"></i>
                                 </div>
                             </div>
@@ -868,7 +872,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" data-dismiss="modal" type="submit" id="statistic-result-btn">Thống kê</button>
+                    <button class="btn btn-success" data-dismiss="modal" type="submit" id="statistic-result-btn">Thống kê</button>
                     <button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
                 </div>
             </div>

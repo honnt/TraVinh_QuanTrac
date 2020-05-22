@@ -31,6 +31,11 @@ input[type="radio"], input[type="checkbox"] {
     background: #1aceff;
 }
 
+/*** Form control thẻ select ***/
+.form-control {
+    height: 30px;
+}
+
 /*** Tool quan trắc***/
 label {
     margin-bottom: 0;
@@ -212,14 +217,22 @@ label {
 }
 
 .search-advanced-titles, .modal-advanced-titles {
-    margin-top: 12px;
     color: #0099fa;
     font-weight: bold;
+}
+
+.search-advanced-titles {
+    margin-top: 5px;
+}
+
+.modal-advanced-titles {
+    margin-top: 10px;
 }
 
 .search-advanced, .modal-advanced {
     margin-left: -10px;
     margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .search-error, .search-error-basic {
@@ -591,14 +604,16 @@ label {
 }
 
 #search_stats_tramqt {
-    margin: -5px 0px 0px -30px;
-    padding: 7px;
+    margin: -23% 0px 0px 87%;
+    padding: 6px;
     font-size: 16px;
+    background-color: #ff6810;
+    color: #fff;
 }
 
 #search_stats_tramqt:hover {
-    border-radius: 8%;
-    border: 1px solid #aaa;
+    background-color: #ff6b2f;
+    color: #fff;
 }
 
 .modal-header {
@@ -774,6 +789,10 @@ span .paginate_button {
 
     .modal-statistic {
         margin-right: 0;
+    }
+
+    .navbar-form .has-feedback .form-control-feedback {
+        top: -3px;
     }
 }
 
