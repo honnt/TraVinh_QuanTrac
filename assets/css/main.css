@@ -622,6 +622,10 @@ label {
     border-bottom: 1px solid #0099fa;
 }
 
+.modal-feature {
+    width: 800px;
+}
+
 .modal-statistic {
     float: right;
     margin-top: 0px;

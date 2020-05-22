@@ -24,7 +24,7 @@
 + Bỏ nút Copy và Print, đổi màu đỏ cho các nút hiển thị 1 giờ, 8 giờ và 24 giờ (done)
 + Tool chạy batch files để ở trang Admin (tool chạy bằng Php)
 + Làm phần Scrollbar width to hơn (done)
-
++ Fit content cho modalFeature khi DOM dữ liệu từ DB
 + Hiện số liệu trạm quan trắc:
     + Đối với trạm tự động: có hiện chart
     + Đối với trạm bán tự động: không hiện chart nhưng hiện bảng số liệu 
