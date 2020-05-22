@@ -234,32 +234,6 @@ $.getJSON("services/call_elec_board.php", function (data_bangdientu) {
                         categories_quantrac[category_quantrac] = L.layerGroup().addTo(map);
                     }
                     categories_quantrac[category_quantrac].addLayer(layer);
-
-                    /*----- Search Advanced cho lớp điểm quan trắc -----*/
-                    var loaitram_mapchoose = document.getElementById('loaitram');
-                    loaitram_mapchoose.addEventListener('change', function () {
-                        var item = this.options[this.selectedIndex].text;
-                        if (item == "Lựa chọn loại trạm") {
-                            map.addLayer(layer);
-                        } else if (feat.properties.categoryName != item) {
-                            map.removeLayer(layer);
-                        } else {
-                            map.addLayer(layer);
-                        }
-                    });
-
-                    /* var quanhuyen_mapchoose = document.getElementById('district');
-                    quanhuyen_mapchoose.addEventListener('change', function() {
-                        var item = this.options[this.selectedIndex].text;
-                        if (item == "Lựa chọn quận huyện") {
-                            map.addLayer(layer);
-                        }
-                        else if (feat.properties.districtName != item) {
-                            map.removeLayer(layer);
-                        } else {
-                            map.addLayer(layer);
-                        }
-                    }); */
                 },
 
                 pointToLayer: function (feat, latlng) {

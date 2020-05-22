@@ -17,7 +17,8 @@ jQuery(document).ready(function ($) {
             source: data_obstyles,
             isMultiple: true,
             cascadeSelect: true,
-            collapse: false
+            collapse: false,
+            selected: [0, 2, 3, 8, 9, 20, 22, 23, 24, 25, 26]
         });
     })
 })

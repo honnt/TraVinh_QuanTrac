@@ -4,7 +4,7 @@
 
 <?php
     /*** Querry lựa chọn loại hình ***/
-    $querry_option_obstypes = 'SELECT * FROM "ObservationType"';
+    $querry_option_obstypes = 'SELECT * FROM "ObservationType" ORDER BY "name" ASC';
     $result = pg_query($travinh_db, $querry_option_obstypes);
     if (!$result) {
         echo "Không có dữ liệu.\n";
