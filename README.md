@@ -1,4 +1,4 @@
-# Quan trắc Trà Vinh - Thử nghiệm
+# Quan trắc Trà Vinh
 
 ### References
 + https://datatables.net/forums/discussion/29866/datatables-buttons-removes-the-length-menu
