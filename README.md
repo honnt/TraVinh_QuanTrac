@@ -46,3 +46,7 @@ https://askubuntu.com/questions/599921/adminer-none-of-the-supported-php-extensi
 (link: https://askubuntu.com/questions/599921/adminer-none-of-the-supported-php-extensions-mysqli-mysql-pdo-mysql-are-ava/600156#600156)
 + Tạo JSON Nested: 
 https://www.semicolonworld.com/question/32508/add-json-element-to-multidimensional-json-object-php
+
+### Note xử lý onchange in map using Select Option/Checkbox Input
++ Vào trang show hết tất cả điểm (lựa chọn loại hình được tích `Tất cả`)
++ 

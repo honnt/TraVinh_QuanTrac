@@ -5,7 +5,7 @@
 -- Dumped from database version 12.3
 -- Dumped by pg_dump version 12.3
 
--- Started on 2020-05-20 08:58:34
+-- Started on 2020-05-21 15:25:14
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -49,7 +49,7 @@ CREATE SCHEMA topology;
 ALTER SCHEMA topology OWNER TO postgres;
 
 --
--- TOC entry 5405 (class 0 OID 0)
+-- TOC entry 5421 (class 0 OID 0)
 -- Dependencies: 18
 -- Name: SCHEMA topology; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -66,7 +66,7 @@ CREATE EXTENSION IF NOT EXISTS address_standardizer WITH SCHEMA public;
 
 
 --
--- TOC entry 5406 (class 0 OID 0)
+-- TOC entry 5422 (class 0 OID 0)
 -- Dependencies: 8
 -- Name: EXTENSION address_standardizer; Type: COMMENT; Schema: -; Owner: 
 --
@@ -83,7 +83,7 @@ CREATE EXTENSION IF NOT EXISTS adminpack WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 5407 (class 0 OID 0)
+-- TOC entry 5423 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION adminpack; Type: COMMENT; Schema: -; Owner: 
 --
@@ -100,7 +100,7 @@ CREATE EXTENSION IF NOT EXISTS fuzzystrmatch WITH SCHEMA public;
 
 
 --
--- TOC entry 5408 (class 0 OID 0)
+-- TOC entry 5424 (class 0 OID 0)
 -- Dependencies: 3
 -- Name: EXTENSION fuzzystrmatch; Type: COMMENT; Schema: -; Owner: 
 --
@@ -117,7 +117,7 @@ CREATE EXTENSION IF NOT EXISTS ogr_fdw WITH SCHEMA public;
 
 
 --
--- TOC entry 5409 (class 0 OID 0)
+-- TOC entry 5425 (class 0 OID 0)
 -- Dependencies: 4
 -- Name: EXTENSION ogr_fdw; Type: COMMENT; Schema: -; Owner: 
 --
@@ -134,7 +134,7 @@ CREATE EXTENSION IF NOT EXISTS postgis WITH SCHEMA public;
 
 
 --
--- TOC entry 5410 (class 0 OID 0)
+-- TOC entry 5426 (class 0 OID 0)
 -- Dependencies: 11
 -- Name: EXTENSION postgis; Type: COMMENT; Schema: -; Owner: 
 --
@@ -151,7 +151,7 @@ CREATE EXTENSION IF NOT EXISTS pgrouting WITH SCHEMA public;
 
 
 --
--- TOC entry 5411 (class 0 OID 0)
+-- TOC entry 5427 (class 0 OID 0)
 -- Dependencies: 9
 -- Name: EXTENSION pgrouting; Type: COMMENT; Schema: -; Owner: 
 --
@@ -168,7 +168,7 @@ CREATE EXTENSION IF NOT EXISTS pointcloud WITH SCHEMA public;
 
 
 --
--- TOC entry 5412 (class 0 OID 0)
+-- TOC entry 5428 (class 0 OID 0)
 -- Dependencies: 6
 -- Name: EXTENSION pointcloud; Type: COMMENT; Schema: -; Owner: 
 --
@@ -185,7 +185,7 @@ CREATE EXTENSION IF NOT EXISTS pointcloud_postgis WITH SCHEMA public;
 
 
 --
--- TOC entry 5413 (class 0 OID 0)
+-- TOC entry 5429 (class 0 OID 0)
 -- Dependencies: 5
 -- Name: EXTENSION pointcloud_postgis; Type: COMMENT; Schema: -; Owner: 
 --
@@ -202,7 +202,7 @@ CREATE EXTENSION IF NOT EXISTS postgis_raster WITH SCHEMA public;
 
 
 --
--- TOC entry 5414 (class 0 OID 0)
+-- TOC entry 5430 (class 0 OID 0)
 -- Dependencies: 10
 -- Name: EXTENSION postgis_raster; Type: COMMENT; Schema: -; Owner: 
 --
@@ -219,7 +219,7 @@ CREATE EXTENSION IF NOT EXISTS postgis_sfcgal WITH SCHEMA public;
 
 
 --
--- TOC entry 5415 (class 0 OID 0)
+-- TOC entry 5431 (class 0 OID 0)
 -- Dependencies: 7
 -- Name: EXTENSION postgis_sfcgal; Type: COMMENT; Schema: -; Owner: 
 --
@@ -236,7 +236,7 @@ CREATE EXTENSION IF NOT EXISTS postgis_tiger_geocoder WITH SCHEMA tiger;
 
 
 --
--- TOC entry 5416 (class 0 OID 0)
+-- TOC entry 5432 (class 0 OID 0)
 -- Dependencies: 13
 -- Name: EXTENSION postgis_tiger_geocoder; Type: COMMENT; Schema: -; Owner: 
 --
@@ -253,7 +253,7 @@ CREATE EXTENSION IF NOT EXISTS postgis_topology WITH SCHEMA topology;
 
 
 --
--- TOC entry 5417 (class 0 OID 0)
+-- TOC entry 5433 (class 0 OID 0)
 -- Dependencies: 12
 -- Name: EXTENSION postgis_topology; Type: COMMENT; Schema: -; Owner: 
 --
@@ -326,6 +326,21 @@ CREATE TABLE public."Category" (
 
 
 ALTER TABLE public."Category" OWNER TO postgres;
+
+--
+-- TOC entry 322 (class 1259 OID 28724)
+-- Name: District; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."District" (
+    id integer NOT NULL,
+    code character varying(10),
+    name character varying(255),
+    provinceid integer
+);
+
+
+ALTER TABLE public."District" OWNER TO postgres;
 
 --
 -- TOC entry 294 (class 1259 OID 19171)
@@ -430,7 +445,9 @@ CREATE TABLE public."ObservationType" (
     name character varying(255) NOT NULL,
     parentid integer,
     categoryid integer DEFAULT 1,
-    icon character varying(255)
+    code character varying(10),
+    level integer,
+    ordering integer
 );
 
 
@@ -462,11 +479,26 @@ CREATE TABLE public."Observationstation" (
     ftpusername character varying(255),
     ftppassword character varying(255),
     obstypes character varying(255),
-    the_geom public.geometry
+    the_geom public.geometry,
+    district integer
 );
 
 
 ALTER TABLE public."Observationstation" OWNER TO postgres;
+
+--
+-- TOC entry 323 (class 1259 OID 31941)
+-- Name: Obstype_Station; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."Obstype_Station" (
+    id integer NOT NULL,
+    stationid integer,
+    obstypesid integer
+);
+
+
+ALTER TABLE public."Obstype_Station" OWNER TO postgres;
 
 --
 -- TOC entry 301 (class 1259 OID 19215)
@@ -592,7 +624,7 @@ CREATE TABLE public."StandardParameter" (
     minvalue double precision,
     maxvalue double precision,
     purposeid integer,
-    analysismethod character varying(255)
+    analysismethod text
 );
 
 
@@ -628,7 +660,7 @@ CREATE SEQUENCE public.basin_id_seq
 ALTER TABLE public.basin_id_seq OWNER TO postgres;
 
 --
--- TOC entry 5418 (class 0 OID 0)
+-- TOC entry 5434 (class 0 OID 0)
 -- Dependencies: 310
 -- Name: basin_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -652,7 +684,7 @@ CREATE SEQUENCE public.category_id_seq
 ALTER TABLE public.category_id_seq OWNER TO postgres;
 
 --
--- TOC entry 5419 (class 0 OID 0)
+-- TOC entry 5435 (class 0 OID 0)
 -- Dependencies: 311
 -- Name: category_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -676,7 +708,7 @@ CREATE SEQUENCE public.electronicinfoboard_id_seq
 ALTER TABLE public.electronicinfoboard_id_seq OWNER TO postgres;
 
 --
--- TOC entry 5420 (class 0 OID 0)
+-- TOC entry 5436 (class 0 OID 0)
 -- Dependencies: 312
 -- Name: electronicinfoboard_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -715,7 +747,7 @@ CREATE SEQUENCE public.location_id_seq
 ALTER TABLE public.location_id_seq OWNER TO postgres;
 
 --
--- TOC entry 5421 (class 0 OID 0)
+-- TOC entry 5437 (class 0 OID 0)
 -- Dependencies: 314
 -- Name: location_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -739,7 +771,7 @@ CREATE SEQUENCE public.observation_id_seq
 ALTER TABLE public.observation_id_seq OWNER TO postgres;
 
 --
--- TOC entry 5422 (class 0 OID 0)
+-- TOC entry 5438 (class 0 OID 0)
 -- Dependencies: 315
 -- Name: observation_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -778,7 +810,7 @@ CREATE SEQUENCE public.observationtype_id_seq
 ALTER TABLE public.observationtype_id_seq OWNER TO postgres;
 
 --
--- TOC entry 5423 (class 0 OID 0)
+-- TOC entry 5439 (class 0 OID 0)
 -- Dependencies: 317
 -- Name: observationtype_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -802,7 +834,7 @@ CREATE SEQUENCE public.parameter_id_seq
 ALTER TABLE public.parameter_id_seq OWNER TO postgres;
 
 --
--- TOC entry 5424 (class 0 OID 0)
+-- TOC entry 5440 (class 0 OID 0)
 -- Dependencies: 318
 -- Name: parameter_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -841,7 +873,7 @@ CREATE SEQUENCE public.standard_id_seq
 ALTER TABLE public.standard_id_seq OWNER TO postgres;
 
 --
--- TOC entry 5425 (class 0 OID 0)
+-- TOC entry 5441 (class 0 OID 0)
 -- Dependencies: 320
 -- Name: standard_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -865,7 +897,7 @@ CREATE SEQUENCE public.unit_id_seq
 ALTER TABLE public.unit_id_seq OWNER TO postgres;
 
 --
--- TOC entry 5426 (class 0 OID 0)
+-- TOC entry 5442 (class 0 OID 0)
 -- Dependencies: 321
 -- Name: unit_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -874,7 +906,7 @@ ALTER SEQUENCE public.unit_id_seq OWNED BY public."Unit".id;
 
 
 --
--- TOC entry 5060 (class 2604 OID 19287)
+-- TOC entry 5070 (class 2604 OID 19287)
 -- Name: Basin id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -882,7 +914,7 @@ ALTER TABLE ONLY public."Basin" ALTER COLUMN id SET DEFAULT nextval('public.basi
 
 
 --
--- TOC entry 5061 (class 2604 OID 19288)
+-- TOC entry 5071 (class 2604 OID 19288)
 -- Name: Category id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -890,7 +922,7 @@ ALTER TABLE ONLY public."Category" ALTER COLUMN id SET DEFAULT nextval('public.c
 
 
 --
--- TOC entry 5063 (class 2604 OID 19289)
+-- TOC entry 5073 (class 2604 OID 19289)
 -- Name: ElectronicBoard id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -898,7 +930,7 @@ ALTER TABLE ONLY public."ElectronicBoard" ALTER COLUMN id SET DEFAULT nextval('p
 
 
 --
--- TOC entry 5064 (class 2604 OID 19290)
+-- TOC entry 5074 (class 2604 OID 19290)
 -- Name: Location id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -906,7 +938,7 @@ ALTER TABLE ONLY public."Location" ALTER COLUMN id SET DEFAULT nextval('public.l
 
 
 --
--- TOC entry 5065 (class 2604 OID 19291)
+-- TOC entry 5075 (class 2604 OID 19291)
 -- Name: Observation id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -914,7 +946,7 @@ ALTER TABLE ONLY public."Observation" ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 5067 (class 2604 OID 19292)
+-- TOC entry 5077 (class 2604 OID 19292)
 -- Name: ObservationType id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -922,7 +954,7 @@ ALTER TABLE ONLY public."ObservationType" ALTER COLUMN id SET DEFAULT nextval('p
 
 
 --
--- TOC entry 5071 (class 2604 OID 19293)
+-- TOC entry 5081 (class 2604 OID 19293)
 -- Name: Parameter id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -930,7 +962,7 @@ ALTER TABLE ONLY public."Parameter" ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 5072 (class 2604 OID 19294)
+-- TOC entry 5082 (class 2604 OID 19294)
 -- Name: Standard id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -938,7 +970,7 @@ ALTER TABLE ONLY public."Standard" ALTER COLUMN id SET DEFAULT nextval('public.s
 
 
 --
--- TOC entry 5074 (class 2604 OID 19295)
+-- TOC entry 5084 (class 2604 OID 19295)
 -- Name: Unit id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -946,7 +978,16 @@ ALTER TABLE ONLY public."Unit" ALTER COLUMN id SET DEFAULT nextval('public.unit_
 
 
 --
--- TOC entry 5232 (class 2606 OID 19297)
+-- TOC entry 5259 (class 2606 OID 28740)
+-- Name: District District_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."District"
+    ADD CONSTRAINT "District_pkey" PRIMARY KEY (id);
+
+
+--
+-- TOC entry 5243 (class 2606 OID 19297)
 -- Name: Qualityindex QualityIndex; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -955,7 +996,7 @@ ALTER TABLE ONLY public."Qualityindex"
 
 
 --
--- TOC entry 5198 (class 2606 OID 19299)
+-- TOC entry 5208 (class 2606 OID 19299)
 -- Name: Basin basin; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -964,7 +1005,7 @@ ALTER TABLE ONLY public."Basin"
 
 
 --
--- TOC entry 5201 (class 2606 OID 19301)
+-- TOC entry 5211 (class 2606 OID 19301)
 -- Name: Category category; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -973,7 +1014,7 @@ ALTER TABLE ONLY public."Category"
 
 
 --
--- TOC entry 5204 (class 2606 OID 19303)
+-- TOC entry 5214 (class 2606 OID 19303)
 -- Name: Enterprise enterprise; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -982,7 +1023,7 @@ ALTER TABLE ONLY public."Enterprise"
 
 
 --
--- TOC entry 5207 (class 2606 OID 19305)
+-- TOC entry 5217 (class 2606 OID 19305)
 -- Name: Location location; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -991,7 +1032,7 @@ ALTER TABLE ONLY public."Location"
 
 
 --
--- TOC entry 5209 (class 2606 OID 19307)
+-- TOC entry 5219 (class 2606 OID 19307)
 -- Name: LocationType location_type; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1000,7 +1041,16 @@ ALTER TABLE ONLY public."LocationType"
 
 
 --
--- TOC entry 5224 (class 2606 OID 19309)
+-- TOC entry 5261 (class 2606 OID 31945)
+-- Name: Obstype_Station name_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Obstype_Station"
+    ADD CONSTRAINT name_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 5235 (class 2606 OID 19309)
 -- Name: Observationstation obs_station; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1009,7 +1059,7 @@ ALTER TABLE ONLY public."Observationstation"
 
 
 --
--- TOC entry 5217 (class 2606 OID 19311)
+-- TOC entry 5227 (class 2606 OID 19311)
 -- Name: ObservationType obserType; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1018,7 +1068,7 @@ ALTER TABLE ONLY public."ObservationType"
 
 
 --
--- TOC entry 5226 (class 2606 OID 19313)
+-- TOC entry 5237 (class 2606 OID 19313)
 -- Name: Organization organization; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1027,7 +1077,7 @@ ALTER TABLE ONLY public."Organization"
 
 
 --
--- TOC entry 5228 (class 2606 OID 19315)
+-- TOC entry 5239 (class 2606 OID 19315)
 -- Name: Parameter para; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1036,7 +1086,7 @@ ALTER TABLE ONLY public."Parameter"
 
 
 --
--- TOC entry 5230 (class 2606 OID 19317)
+-- TOC entry 5241 (class 2606 OID 19317)
 -- Name: Purpose purpose; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1045,7 +1095,7 @@ ALTER TABLE ONLY public."Purpose"
 
 
 --
--- TOC entry 5235 (class 2606 OID 19319)
+-- TOC entry 5246 (class 2606 OID 19319)
 -- Name: Sample_BanTuDong sample; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1054,7 +1104,7 @@ ALTER TABLE ONLY public."Sample_BanTuDong"
 
 
 --
--- TOC entry 5238 (class 2606 OID 19321)
+-- TOC entry 5249 (class 2606 OID 19321)
 -- Name: Standard standard; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1063,7 +1113,7 @@ ALTER TABLE ONLY public."Standard"
 
 
 --
--- TOC entry 5244 (class 2606 OID 19323)
+-- TOC entry 5255 (class 2606 OID 19323)
 -- Name: StandardParameter standard_para; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1072,7 +1122,7 @@ ALTER TABLE ONLY public."StandardParameter"
 
 
 --
--- TOC entry 5246 (class 2606 OID 19325)
+-- TOC entry 5257 (class 2606 OID 19325)
 -- Name: Unit unit; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1081,7 +1131,7 @@ ALTER TABLE ONLY public."Unit"
 
 
 --
--- TOC entry 5210 (class 1259 OID 19326)
+-- TOC entry 5220 (class 1259 OID 19326)
 -- Name: find_by_station_idx; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1089,7 +1139,7 @@ CREATE INDEX find_by_station_idx ON public."Observation" USING btree (stationid)
 
 
 --
--- TOC entry 5211 (class 1259 OID 19327)
+-- TOC entry 5221 (class 1259 OID 19327)
 -- Name: find_station_type_day_idx; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1097,7 +1147,7 @@ CREATE INDEX find_station_type_day_idx ON public."Observation" USING btree (stat
 
 
 --
--- TOC entry 5218 (class 1259 OID 19328)
+-- TOC entry 5228 (class 1259 OID 19328)
 -- Name: fki_basin; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1105,7 +1155,7 @@ CREATE INDEX fki_basin ON public."Observationstation" USING btree (basinid);
 
 
 --
--- TOC entry 5215 (class 1259 OID 19329)
+-- TOC entry 5225 (class 1259 OID 19329)
 -- Name: fki_category_connect_obserType; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1113,7 +1163,7 @@ CREATE INDEX "fki_category_connect_obserType" ON public."ObservationType" USING 
 
 
 --
--- TOC entry 5219 (class 1259 OID 19330)
+-- TOC entry 5229 (class 1259 OID 19330)
 -- Name: fki_connect_category; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1121,7 +1171,15 @@ CREATE INDEX fki_connect_category ON public."Observationstation" USING btree (ca
 
 
 --
--- TOC entry 5220 (class 1259 OID 19331)
+-- TOC entry 5230 (class 1259 OID 28746)
+-- Name: fki_connect_district; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX fki_connect_district ON public."Observationstation" USING btree (districtid);
+
+
+--
+-- TOC entry 5231 (class 1259 OID 19331)
 -- Name: fki_connect_enterprise; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1129,7 +1187,7 @@ CREATE INDEX fki_connect_enterprise ON public."Observationstation" USING btree (
 
 
 --
--- TOC entry 5221 (class 1259 OID 19332)
+-- TOC entry 5232 (class 1259 OID 19332)
 -- Name: fki_connect_location; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1137,7 +1195,7 @@ CREATE INDEX fki_connect_location ON public."Observationstation" USING btree (lo
 
 
 --
--- TOC entry 5222 (class 1259 OID 19333)
+-- TOC entry 5233 (class 1259 OID 19333)
 -- Name: fki_connect_organization; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1145,7 +1203,7 @@ CREATE INDEX fki_connect_organization ON public."Observationstation" USING btree
 
 
 --
--- TOC entry 5205 (class 1259 OID 19334)
+-- TOC entry 5215 (class 1259 OID 19334)
 -- Name: fki_location_connect_locType; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1153,7 +1211,7 @@ CREATE INDEX "fki_location_connect_locType" ON public."Location" USING btree (lo
 
 
 --
--- TOC entry 5212 (class 1259 OID 19335)
+-- TOC entry 5222 (class 1259 OID 19335)
 -- Name: fki_qualityIndex_connect_observation; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1161,7 +1219,7 @@ CREATE INDEX "fki_qualityIndex_connect_observation" ON public."Observation" USIN
 
 
 --
--- TOC entry 5213 (class 1259 OID 19336)
+-- TOC entry 5223 (class 1259 OID 19336)
 -- Name: fki_sampleid_connect_observation; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1169,7 +1227,7 @@ CREATE INDEX fki_sampleid_connect_observation ON public."Observation" USING btre
 
 
 --
--- TOC entry 5214 (class 1259 OID 19337)
+-- TOC entry 5224 (class 1259 OID 19337)
 -- Name: fki_standardPara_connect_observation; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1177,7 +1235,7 @@ CREATE INDEX "fki_standardPara_connect_observation" ON public."Observation" USIN
 
 
 --
--- TOC entry 5239 (class 1259 OID 19338)
+-- TOC entry 5250 (class 1259 OID 19338)
 -- Name: fki_standardPara_connect_para; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1185,7 +1243,7 @@ CREATE INDEX "fki_standardPara_connect_para" ON public."StandardParameter" USING
 
 
 --
--- TOC entry 5240 (class 1259 OID 19339)
+-- TOC entry 5251 (class 1259 OID 19339)
 -- Name: fki_standardPara_connect_purpose; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1193,7 +1251,7 @@ CREATE INDEX "fki_standardPara_connect_purpose" ON public."StandardParameter" US
 
 
 --
--- TOC entry 5241 (class 1259 OID 19340)
+-- TOC entry 5252 (class 1259 OID 19340)
 -- Name: fki_standardPara_connect_standard; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1201,7 +1259,7 @@ CREATE INDEX "fki_standardPara_connect_standard" ON public."StandardParameter" U
 
 
 --
--- TOC entry 5242 (class 1259 OID 19341)
+-- TOC entry 5253 (class 1259 OID 19341)
 -- Name: fki_standardPara_connect_unit; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1209,7 +1267,7 @@ CREATE INDEX "fki_standardPara_connect_unit" ON public."StandardParameter" USING
 
 
 --
--- TOC entry 5236 (class 1259 OID 19342)
+-- TOC entry 5247 (class 1259 OID 19342)
 -- Name: fki_standard_connect_obserType; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1217,7 +1275,7 @@ CREATE INDEX "fki_standard_connect_obserType" ON public."Standard" USING btree (
 
 
 --
--- TOC entry 5202 (class 1259 OID 19343)
+-- TOC entry 5212 (class 1259 OID 19343)
 -- Name: fki_stationid_connect_ElecBoard; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1225,7 +1283,7 @@ CREATE INDEX "fki_stationid_connect_ElecBoard" ON public."ElectronicBoard" USING
 
 
 --
--- TOC entry 5199 (class 1259 OID 19344)
+-- TOC entry 5209 (class 1259 OID 19344)
 -- Name: fki_stationid_connect_cam; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1233,7 +1291,7 @@ CREATE INDEX fki_stationid_connect_cam ON public."Camera" USING btree (stationid
 
 
 --
--- TOC entry 5233 (class 1259 OID 19345)
+-- TOC entry 5244 (class 1259 OID 19345)
 -- Name: fki_stationid_connect_observation; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -1241,7 +1299,7 @@ CREATE INDEX fki_stationid_connect_observation ON public."Sample_BanTuDong" USIN
 
 
 --
--- TOC entry 5254 (class 2606 OID 19346)
+-- TOC entry 5269 (class 2606 OID 19346)
 -- Name: ObservationType category_connect_obserType; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1250,7 +1308,7 @@ ALTER TABLE ONLY public."ObservationType"
 
 
 --
--- TOC entry 5255 (class 2606 OID 19351)
+-- TOC entry 5270 (class 2606 OID 19351)
 -- Name: Observationstation connect_basin; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1259,7 +1317,7 @@ ALTER TABLE ONLY public."Observationstation"
 
 
 --
--- TOC entry 5256 (class 2606 OID 19356)
+-- TOC entry 5271 (class 2606 OID 19356)
 -- Name: Observationstation connect_category; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1268,7 +1326,16 @@ ALTER TABLE ONLY public."Observationstation"
 
 
 --
--- TOC entry 5257 (class 2606 OID 19361)
+-- TOC entry 5272 (class 2606 OID 28741)
+-- Name: Observationstation connect_district; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Observationstation"
+    ADD CONSTRAINT connect_district FOREIGN KEY (districtid) REFERENCES public."District"(id) NOT VALID;
+
+
+--
+-- TOC entry 5273 (class 2606 OID 19361)
 -- Name: Observationstation connect_enterprise; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1277,7 +1344,7 @@ ALTER TABLE ONLY public."Observationstation"
 
 
 --
--- TOC entry 5258 (class 2606 OID 19366)
+-- TOC entry 5274 (class 2606 OID 19366)
 -- Name: Observationstation connect_location; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1286,7 +1353,7 @@ ALTER TABLE ONLY public."Observationstation"
 
 
 --
--- TOC entry 5259 (class 2606 OID 19371)
+-- TOC entry 5275 (class 2606 OID 19371)
 -- Name: Observationstation connect_organization; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1295,7 +1362,7 @@ ALTER TABLE ONLY public."Observationstation"
 
 
 --
--- TOC entry 5249 (class 2606 OID 19376)
+-- TOC entry 5264 (class 2606 OID 19376)
 -- Name: Location location_connect_locType; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1304,7 +1371,7 @@ ALTER TABLE ONLY public."Location"
 
 
 --
--- TOC entry 5250 (class 2606 OID 19381)
+-- TOC entry 5265 (class 2606 OID 19381)
 -- Name: Observation qualityIndex_connect_observation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1313,7 +1380,7 @@ ALTER TABLE ONLY public."Observation"
 
 
 --
--- TOC entry 5251 (class 2606 OID 19386)
+-- TOC entry 5266 (class 2606 OID 19386)
 -- Name: Observation sampleid_connect_observation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1322,7 +1389,7 @@ ALTER TABLE ONLY public."Observation"
 
 
 --
--- TOC entry 5252 (class 2606 OID 19391)
+-- TOC entry 5267 (class 2606 OID 19391)
 -- Name: Observation standardPara_connect_observation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1331,7 +1398,7 @@ ALTER TABLE ONLY public."Observation"
 
 
 --
--- TOC entry 5262 (class 2606 OID 19396)
+-- TOC entry 5278 (class 2606 OID 19396)
 -- Name: StandardParameter standardPara_connect_para; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1340,7 +1407,7 @@ ALTER TABLE ONLY public."StandardParameter"
 
 
 --
--- TOC entry 5263 (class 2606 OID 19401)
+-- TOC entry 5279 (class 2606 OID 19401)
 -- Name: StandardParameter standardPara_connect_purpose; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1349,7 +1416,7 @@ ALTER TABLE ONLY public."StandardParameter"
 
 
 --
--- TOC entry 5264 (class 2606 OID 19406)
+-- TOC entry 5280 (class 2606 OID 19406)
 -- Name: StandardParameter standardPara_connect_standard; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1358,7 +1425,7 @@ ALTER TABLE ONLY public."StandardParameter"
 
 
 --
--- TOC entry 5265 (class 2606 OID 19411)
+-- TOC entry 5281 (class 2606 OID 19411)
 -- Name: StandardParameter standardPara_connect_unit; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1367,7 +1434,7 @@ ALTER TABLE ONLY public."StandardParameter"
 
 
 --
--- TOC entry 5261 (class 2606 OID 19416)
+-- TOC entry 5277 (class 2606 OID 19416)
 -- Name: Standard standard_connect_obserType; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1376,7 +1443,7 @@ ALTER TABLE ONLY public."Standard"
 
 
 --
--- TOC entry 5248 (class 2606 OID 19421)
+-- TOC entry 5263 (class 2606 OID 19421)
 -- Name: ElectronicBoard stationid_connect_ElecBoard; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1385,7 +1452,7 @@ ALTER TABLE ONLY public."ElectronicBoard"
 
 
 --
--- TOC entry 5247 (class 2606 OID 19426)
+-- TOC entry 5262 (class 2606 OID 19426)
 -- Name: Camera stationid_connect_cam; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1394,7 +1461,7 @@ ALTER TABLE ONLY public."Camera"
 
 
 --
--- TOC entry 5253 (class 2606 OID 19431)
+-- TOC entry 5268 (class 2606 OID 19431)
 -- Name: Observation stationid_connect_observation; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1403,7 +1470,7 @@ ALTER TABLE ONLY public."Observation"
 
 
 --
--- TOC entry 5260 (class 2606 OID 19436)
+-- TOC entry 5276 (class 2606 OID 19436)
 -- Name: Sample_BanTuDong stationid_connect_sample; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1411,7 +1478,7 @@ ALTER TABLE ONLY public."Sample_BanTuDong"
     ADD CONSTRAINT stationid_connect_sample FOREIGN KEY (stationid) REFERENCES public."Observationstation"(id) NOT VALID;
 
 
--- Completed on 2020-05-20 08:58:35
+-- Completed on 2020-05-21 15:25:16
 
 --
 -- PostgreSQL database dump complete

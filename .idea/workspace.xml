@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461f7496-579b-4c31-90e4-a3dfaeb4f371" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/services/database/FullSoLieuTV_21052020_1524.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/database/FullSoLieuTV_21052020_1525.backup" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/option_customize/comboTreePlugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/option_customize/comboTreePlugin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/option_customize/option_searches.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/option_customize/option_searches.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets_map/js/mapfunc/MapScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets_map/js/mapfunc/MapSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets_map/js/mapfunc/MapSearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/database/FullSoLieuTV_20052020_0858.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/database/FullSoLieuTV_20052020_0900.backup" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +72,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Drop-Down-Combo-Tree" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DongThap_quantrac" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="SvnConfiguration">
@@ -105,7 +113,10 @@
       <workItem from="1589850721002" duration="14878000" />
       <workItem from="1589935351873" duration="23883000" />
       <workItem from="1590030340995" duration="15949000" />
-      <workItem from="1590110323360" duration="13482000" />
+      <workItem from="1590110323360" duration="19258000" />
+      <workItem from="1590138598610" duration="3202000" />
+      <workItem from="1590141832782" duration="8000" />
+      <workItem from="1590144993757" duration="3641000" />
     </task>
     <task id="LOCAL-00001" summary="TraVinh_QuanTrac">
       <created>1588737118984</created>
@@ -317,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590124831297</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="TraVinh_QuanTrac">
+      <created>1590131131463</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1590131131463</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,18 +347,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="TraVinh_QuanTrac" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1590124830320">
+    <state x="375" y="0" key="CommitChangelistDialog2" timestamp="1590131130390">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905135465" />
-    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590124830320" />
+    <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590131130390" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1589462260203" />
     <state x="375" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588751106467" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1590034870409">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1590133670471">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588132046198" />
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590034870409" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590133670471" />
     <state x="604" y="336" key="NewPhpFileDialog" timestamp="1590032780360">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -353,21 +371,26 @@
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1589783456571" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1589462310049" />
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1588751143323" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1590124841901">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1590131140564">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588905139877" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590124841901" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590131140564" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1589462279530" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588751113279" />
-    <state x="444" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1590030340981">
+    <state x="444" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1590145020477">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590030340981" />
+    <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1590138601624" />
+    <state x="444" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1590145020477" />
     <state x="452" y="0" width="631" height="834" key="find.popup" timestamp="1588902705344">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="452" y="0" width="631" height="834" key="find.popup/0.0.1536.834/1920.0.1024.738@0.0.1536.834" timestamp="1588902705344" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1590148854996">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834/1920.30.1366.738@0.0.1536.834" timestamp="1590148854996" />
     <state x="431" y="155" width="672" height="160" key="search.everywhere.popup" timestamp="1590051413397">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

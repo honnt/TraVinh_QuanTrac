@@ -11,10 +11,10 @@ $.getJSON("services/call_categories_option.php", function (data_category) {
 })
 
 /*----- DOM Option Loại hình -----*/
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     $.getJSON("services/call_obstyles_option.php", function (data_obstyles) {
         $('#loaihinh').comboTree({
-            source : data_obstyles,
+            source: data_obstyles,
             isMultiple: true,
             cascadeSelect: true,
             collapse: false

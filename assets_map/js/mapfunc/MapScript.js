@@ -106,12 +106,12 @@ function markerOnClick(e) {
 }
 
 /*** Dữ liệu không gian ***/
-$.getJSON("services/call_elec_board.php", function(data_bangdientu) {
+$.getJSON("services/call_elec_board.php", function (data_bangdientu) {
     $.getJSON("services/call_obser_station.php", function (data_quantrac) {
         var categories_quantrac = {}, category_quantrac;
 
         function add_quantrac(data, map) {
-            L.geoJSON(data, {
+            geojson = L.geoJSON(data, {
                 onEachFeature: function (feat, layer) {
                     /*** Kiểm tra trạm quan trắc có năm thành lập hay không ***/
                     var establishyear_qt = "";
@@ -219,7 +219,7 @@ $.getJSON("services/call_elec_board.php", function(data_bangdientu) {
                     quantrac_search.push({
                         name: feat.properties.name,
                         quanhuyen: feat.properties.districtName,
-                        loaihinh: feat.properties.obstypes,
+                        loaihinh: feat.properties.obstype_namelist,
                         loaitram: feat.properties.categoryName,
                         source: "quantrac_search",
                         id: L.stamp(layer),
@@ -227,21 +227,45 @@ $.getJSON("services/call_elec_board.php", function(data_bangdientu) {
                         lng: feat.geometry.coordinates[0]
                     })
 
-                    // category_quantrac = feat.properties.loaitram;
-                    category_quantrac = feat.properties.obstypes;
+                    // category_quantrac = feat.properties.categoryName;
+                    category_quantrac = feat.properties.categoryName;
                     if (typeof categories_quantrac[category_quantrac] === "undefined") {
-                        // console.log(category_quantrac);
+                        //console.log(category_quantrac);
                         categories_quantrac[category_quantrac] = L.layerGroup().addTo(map);
                     }
                     categories_quantrac[category_quantrac].addLayer(layer);
 
-                    /*--- Control Layer Data cho bộ điểm quan trắc ---*/
+                    /*----- Search Advanced cho lớp điểm quan trắc -----*/
+                    var loaitram_mapchoose = document.getElementById('loaitram');
+                    loaitram_mapchoose.addEventListener('change', function () {
+                        var item = this.options[this.selectedIndex].text;
+                        if (item == "Lựa chọn loại trạm") {
+                            map.addLayer(layer);
+                        } else if (feat.properties.categoryName != item) {
+                            map.removeLayer(layer);
+                        } else {
+                            map.addLayer(layer);
+                        }
+                    });
+
+                    /* var quanhuyen_mapchoose = document.getElementById('district');
+                    quanhuyen_mapchoose.addEventListener('change', function() {
+                        var item = this.options[this.selectedIndex].text;
+                        if (item == "Lựa chọn quận huyện") {
+                            map.addLayer(layer);
+                        }
+                        else if (feat.properties.districtName != item) {
+                            map.removeLayer(layer);
+                        } else {
+                            map.addLayer(layer);
+                        }
+                    }); */
                 },
 
                 pointToLayer: function (feat, latlng) {
                     return L.marker(latlng).on('click', markerOnClick);
                 }
-            });
+            })
         };
         add_quantrac(data_quantrac, map);
     })

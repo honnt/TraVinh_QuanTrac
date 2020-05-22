@@ -104,7 +104,6 @@
     }
 
     ComboTree.prototype.createSourceSubItemsHTML = function (subItems, parentId) {
-        console.log(parentId);
         var subItemsHtml = '<UL id="' + this.comboTreeId +
             'ComboTreeSourceUl' + (parentId ? parentId : 'main') + '" style="' +
             /***
