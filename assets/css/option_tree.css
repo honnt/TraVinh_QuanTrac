@@ -11,7 +11,7 @@
 }
 
 .comboTreeInputBox::placeholder {
-    padding-left: 8px !important;
+    padding-left: 1px !important;
     color: #5d5d5d;
 }
 
@@ -91,7 +91,6 @@
     cursor: not-allowed;
 }
 
-
 .comboTreeDropDownContainer li:hover {
     background-color: var(--ct-tree-hover);
 }
@@ -133,7 +132,6 @@ span.comboTreeItemTitle {
     cursor: pointer;
 }
 
-
 .comboTreeInputBox {
     padding: var(--ct-padding);
     border-radius: var(--ct-border-radius);
@@ -142,6 +140,7 @@ span.comboTreeItemTitle {
     height: 30px;
     box-sizing: border-box;
     padding-right: 24px;
+    padding-left: 14.65px;
 }
 
 .comboTreeInputBox:focus {

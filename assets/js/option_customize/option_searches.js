@@ -2,11 +2,11 @@
 $.getJSON("services/call_categories_option.php", function (data_category) {
     $('#loaitram')
         .append($("<option></option>")
-            .attr('value', 0).text("Lựa chọn loại trạm"));
+            .attr('value', 'none').text("Lựa chọn loại trạm"));
     $.each(data_category, function (key, value) {
         $('#loaitram')
             .append($("<option></option>")
-                .attr('value', value.id).text(value.name));
+                .attr('value', value.name).text(value.name));
     });
 })
 
@@ -27,10 +27,10 @@ jQuery(document).ready(function ($) {
 $.getJSON("services/call_districts_option.php", function (data_district) {
     $('#district')
         .append($("<option></option>")
-            .attr('value', 0).text("Lựa chọn quận huyện"));
+            .attr('value', 'none').text("Lựa chọn quận huyện"));
     $.each(data_district, function (key, value) {
         $('#district')
             .append($("<option></option>")
-                .attr('value', value.id).text(value.name));
+                .attr('value', value.name).text(value.name));
     });
 })

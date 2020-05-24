@@ -49,3 +49,5 @@ https://www.semicolonworld.com/question/32508/add-json-element-to-multidimension
 
 ### Note xử lý onchange in map using Select Option/Checkbox Input
 + Vào trang show hết tất cả điểm (lựa chọn loại hình được tích `Tất cả` ==> done)
++ Ghép chuỗi trong service: sử dụng linh hoạt `%20` (dấu " ") và `%27` (dấu "'")
++ Đưa về sử dụng Leaflet Ajax + Option Onchange + Ghép chuỗi service URL

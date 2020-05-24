@@ -85,7 +85,7 @@ zoomHome.addTo(map);
 /*---- Biến tìm kiếm quan trắc cơ bản ----*/
 var quantrac_search = [];
 
-/*** Tạo Pulse Marker ***/
+/*---- Tạo Pulse Marker ----*/
 var pulse_marker;
 var pulsingIcon = L.icon.pulse({
     iconSize: [13, 13],
@@ -105,145 +105,130 @@ function markerOnClick(e) {
     });
 }
 
-/*** Dữ liệu không gian ***/
-$.getJSON("services/call_elec_board.php", function (data_bangdientu) {
-    $.getJSON("services/call_obser_station.php", function (data_quantrac) {
-        var categories_quantrac = {}, category_quantrac;
+/*---- Dữ liệu không gian ----*/
+/*** Khi load trang hay F5 sẽ gọi service 'call_obser_station.php' không thêm các điều kiện ***/
+url_call_station = "services/call_obser_station.php?loaitram=1=1&quanhuyen=1=1";
+view_data_quantrac = new L.GeoJSON.AJAX(url_call_station, {
+    pointToLayer: function (feat, latlng) {
+        return L.marker(latlng).on('click', markerOnClick);
+    },
+    onEachFeature: function (feat, layer) {
+        /*** Kiểm tra trạm quan trắc có năm thành lập hay không ***/
+        var establishyear_qt = "";
+        if (feat.properties.establishyear != null) {
+            establishyear_qt = feat.properties.establishyear
+        } else {
+            establishyear_qt = "Chưa cập nhật";
+        }
 
-        function add_quantrac(data, map) {
-            geojson = L.geoJSON(data, {
-                onEachFeature: function (feat, layer) {
-                    /*** Kiểm tra trạm quan trắc có năm thành lập hay không ***/
-                    var establishyear_qt = "";
-                    if (feat.properties.establishyear != null) {
-                        establishyear_qt = feat.properties.establishyear
-                    } else {
-                        establishyear_qt = "Chưa cập nhật";
-                    }
+        /*** Kiểm tra trạm quan trắc có tổ chức/doanh nghiệp hay không ***/
+        var organizationName_qt = "";
+        var enterpriseName_qt = "";
+        if (feat.properties.organizationName != null) {
+            organizationName_qt = feat.properties.organizationName
+        } else {
+            organizationName_qt = "Chưa cập nhật";
+        }
 
-                    /*** Kiểm tra trạm quan trắc có tổ chức/doanh nghiệp hay không ***/
-                    var organizationName_qt = "";
-                    var enterpriseName_qt = "";
-                    if (feat.properties.organizationName != null) {
-                        organizationName_qt = feat.properties.organizationName
-                    } else {
-                        organizationName_qt = "Chưa cập nhật";
-                    }
+        if (feat.properties.enterpriseName != null) {
+            enterpriseName_qt = feat.properties.enterpriseName
+        } else {
+            enterpriseName_qt = "Chưa cập nhật";
+        }
 
-                    if (feat.properties.enterpriseName != null) {
-                        enterpriseName_qt = feat.properties.enterpriseName
-                    } else {
-                        enterpriseName_qt = "Chưa cập nhật";
-                    }
+        /*** Kiểm tra trạm quan trắc đang hoạt động hay không ***/
+        var active_qt = "";
+        if (feat.properties.active == "Y") {
+            active_qt = "&nbsp;Trạng thái</th><td>" + "<span class='badge bg-info bg-active-qt'>" +
+                'Đang hoạt động' + "</span>" + "</td></tr>"
+        } else {
+            active_qt = "&nbsp;Trạng thái</th><td>" + "<span class='badge bg-active-qt'>" +
+                'Ngừng hoạt động' + "</span>" + "</td></tr>"
+        }
 
-                    /*** Kiểm tra trạm quan trắc đang hoạt động hay không ***/
-                    var active_qt = "";
-                    if (feat.properties.active == "Y") {
-                        active_qt = "&nbsp;Trạng thái</th><td>" + "<span class='badge bg-info bg-active-qt'>" +
-                            'Đang hoạt động' + "</span>" + "</td></tr>"
-                    } else {
-                        active_qt = "&nbsp;Trạng thái</th><td>" + "<span class='badge bg-active-qt'>" +
-                            'Ngừng hoạt động' + "</span>" + "</td></tr>"
-                    }
+        /*** Thông tin trạm quan trắc ***/
+        var content_info = "<table class='table table-striped table-bordered table-condensed'>" +
+            "<tr><th class='blue'><i class='icon-home4' style='font-size: 14px; " +
+            "margin-top: -2px; margin-left: 1px;'></i>" +
+            "&nbsp;Tên trạm</th><td colspan='3' style='font-weight: bold; " +
+            "text-align: center'>" + feat.properties.name + "</td></tr>" +
+            "<tr>" +
+            "<tr><th class='brown'><i class='fa fa-building' style='font-size: 14px; " +
+            "margin-top: -2px; margin-left: 1px;'></i>" +
+            "&nbsp;Doanh nghiệp</th><td colspan='3' style='text-align: center'>" +
+            enterpriseName_qt + "</td></tr>" +
+            "<tr>" +
+            "<th class='brown'><i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;Địa điểm</th><td>" + feat.properties.districtName + "</td>" +
+            "<th class='brown'><i class='icon-server' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;Loại trạm</th><td>" + feat.properties.categoryName + "</td></tr>" +
+            "<tr><th class='brown'><i class='icon-lab' style='font-size: 16px; margin-top: -2px'></i>" +
+            "&nbsp;Loại hình</th><td>" + feat.properties.obstype_namelist + "</td>" +
+            "<th class='brown'><i class='icon-office' style='font-size: 14px; " +
+            "margin-top: -2px; margin-left: 1px;'></i>" +
+            "&nbsp;Tổ chức</th><td>" + organizationName_qt + "</td></tr>" +
+            "<tr><th class='brown'><i class='icon-watch2' style='font-size: 14px; " +
+            "margin-top: -2px; margin-left: 1px;'></i>" +
+            "&nbsp;Thành lập</th><td>" + establishyear_qt + "</td>" +
+            "<th class='brown'><i class='icon-connection' style='font-size: 12px; margin-top: -2px'></i>" +
+            active_qt +
+            "<table>";
 
-                    /*** Thông tin trạm quan trắc ***/
-                    var content_info = "<table class='table table-striped table-bordered table-condensed'>" +
-                        "<tr><th class='blue'><i class='icon-home4' style='font-size: 14px; " +
-                        "margin-top: -2px; margin-left: 1px;'></i>" +
-                        "&nbsp;Tên trạm</th><td colspan='3' style='font-weight: bold; " +
-                        "text-align: center'>" + feat.properties.name + "</td></tr>" +
-                        "<tr>" +
-                        "<tr><th class='brown'><i class='fa fa-building' style='font-size: 14px; " +
-                        "margin-top: -2px; margin-left: 1px;'></i>" +
-                        "&nbsp;Doanh nghiệp</th><td colspan='3' style='text-align: center'>" +
-                        enterpriseName_qt + "</td></tr>" +
-                        "<tr>" +
-                        "<th class='brown'><i class='icon-location3' style='font-size: 16px; margin-top: -2px'></i>" +
-                        "&nbsp;Địa điểm</th><td>" + feat.properties.districtName + "</td>" +
-                        "<th class='brown'><i class='icon-server' style='font-size: 16px; margin-top: -2px'></i>" +
-                        "&nbsp;Loại trạm</th><td>" + feat.properties.categoryName + "</td></tr>" +
-                        "<tr><th class='brown'><i class='icon-lab' style='font-size: 16px; margin-top: -2px'></i>" +
-                        "&nbsp;Loại hình</th><td>" + feat.properties.obstype_namelist + "</td>" +
-                        "<th class='brown'><i class='icon-office' style='font-size: 14px; " +
-                        "margin-top: -2px; margin-left: 1px;'></i>" +
-                        "&nbsp;Tổ chức</th><td>" + organizationName_qt + "</td></tr>" +
-                        "<tr><th class='brown'><i class='icon-watch2' style='font-size: 14px; " +
-                        "margin-top: -2px; margin-left: 1px;'></i>" +
-                        "&nbsp;Thành lập</th><td>" + establishyear_qt + "</td>" +
-                        "<th class='brown'><i class='icon-connection' style='font-size: 12px; margin-top: -2px'></i>" +
-                        active_qt +
-                        "<table>";
+        /*** Số liệu trạm quan trắc mới nhất ***/
+        var content_data_qt = "<table class='table table-striped table-bordered table-condensed'>";
+        content_data_qt = content_data_qt + "<tr><th class='blue' style='text-align: center'>Thời gian</th>" +
+            "<td style='text-align: center'>" + "2019-07-07" + " " + "02:35:00" + "</td></tr>" +
+            "<tr><th class='blue' style='text-align: center'>" + "Nhu cầu Oxy hóa học" +
+            "</th><td style='text-align: center'>" + "33.32" + "</td></tr>";
 
-                    /*** Số liệu trạm quan trắc mới nhất ***/
-                    var content_data_qt = "<table class='table table-striped table-bordered table-condensed'>";
-                    content_data_qt = content_data_qt + "<tr><th class='blue' style='text-align: center'>Thời gian</th>" +
-                        "<td style='text-align: center'>" + "2019-07-07" + " " + "02:35:00" + "</td></tr>" +
-                        "<tr><th class='blue' style='text-align: center'>" + "Nhu cầu Oxy hóa học" +
-                        "</th><td style='text-align: center'>" + "33.32" + "</td></tr>";
+        /*** View Chart cho trạm tự động ***/
+        $.getJSON("assets_map/data/data_viewchart_demo.json", function (data_viewchart_demo) {
+            render_chart_quantrac("chart_para_1", data_viewchart_demo, "Nhu cầu Oxy hóa học",
+                "Thời gian", "Nhu cầu Oxy hóa học");
+        })
 
-                    /*** View Chart cho trạm tự động ***/
-                    $.getJSON("assets_map/data/data_viewchart_demo.json", function (data_viewchart_demo) {
-                        render_chart_quantrac("chart_para_1", data_viewchart_demo, "Nhu cầu Oxy hóa học",
-                            "Thời gian", "Nhu cầu Oxy hóa học");
-                    })
+        layer.on({
+            click: function (e) {
+                if (feat.properties.categoryName == "Tự động"
+                    || feat.properties.categoryName == "Doanh nghiệp") {
+                    $(".feature-title").html(feat.properties.name);
+                    $(".info_qt").html(content_info);
+                    $("#data_qt").html(content_data_qt);
+                    /* $("#chart_qt").html(content_chart); */
 
-                    layer.on({
-                        click: function (e) {
-                            if (feat.properties.categoryName == "Tự động"
-                                || feat.properties.categoryName == "Doanh nghiệp") {
-                                $(".feature-title").html(feat.properties.name);
-                                $(".info_qt").html(content_info);
-                                $("#data_qt").html(content_data_qt);
-                                /* $("#chart_qt").html(content_chart); */
+                    $("#featureModal").modal("show");
+                } else {
+                    $(".feature-title").html(feat.properties.name);
+                    $(".info_qt").html(content_info);
 
-                                $("#featureModal").modal("show");
-                            } else {
-                                $(".feature-title").html(feat.properties.name);
-                                $(".info_qt").html(content_info);
-
-                                $("#featureModal-btd").modal("show");
-                            }
-                            pulse_marker = L.marker([feat.geometry.coordinates[1],
-                                feat.geometry.coordinates[0]], {
-                                icon: pulsingIcon
-                            }).addTo(map);
-                        }
-                    });
-
-                    /*** Modal off function ***/
-                    $('.closemodal').click(function () {
-                        map.removeLayer(pulse_marker)
-                    });
-
-                    /*** Tạo mảng quantrac_search ***/
-                    quantrac_search.push({
-                        name: feat.properties.name,
-                        quanhuyen: feat.properties.districtName,
-                        loaihinh: feat.properties.obstype_namelist,
-                        loaitram: feat.properties.categoryName,
-                        source: "quantrac_search",
-                        id: L.stamp(layer),
-                        lat: feat.geometry.coordinates[1],
-                        lng: feat.geometry.coordinates[0]
-                    })
-
-                    // category_quantrac = feat.properties.categoryName;
-                    category_quantrac = feat.properties.categoryName;
-                    if (typeof categories_quantrac[category_quantrac] === "undefined") {
-                        //console.log(category_quantrac);
-                        categories_quantrac[category_quantrac] = L.layerGroup().addTo(map);
-                    }
-                    categories_quantrac[category_quantrac].addLayer(layer);
-                },
-
-                pointToLayer: function (feat, latlng) {
-                    return L.marker(latlng).on('click', markerOnClick);
+                    $("#featureModal-btd").modal("show");
                 }
-            })
-        };
-        add_quantrac(data_quantrac, map);
-    })
+                pulse_marker = L.marker([feat.geometry.coordinates[1],
+                    feat.geometry.coordinates[0]], {
+                    icon: pulsingIcon
+                }).addTo(map);
+            }
+        });
+
+        /*** Modal off function ***/
+        $('.closemodal').click(function () {
+            map.removeLayer(pulse_marker)
+        });
+
+        /*** Tạo mảng quantrac_search ***/
+        quantrac_search.push({
+            name: feat.properties.name,
+            quanhuyen: feat.properties.districtName,
+            loaihinh: feat.properties.obstype_namelist,
+            loaitram: feat.properties.categoryName,
+            source: "quantrac_search",
+            id: L.stamp(layer),
+            lat: feat.geometry.coordinates[1],
+            lng: feat.geometry.coordinates[0]
+        })
+    }
 })
+view_data_quantrac.addTo(map);
 
 map.addControl(
     L.control.basemaps({
