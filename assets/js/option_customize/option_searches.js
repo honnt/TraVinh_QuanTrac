@@ -18,6 +18,7 @@ jQuery(document).ready(function ($) {
             isMultiple: true,
             cascadeSelect: true,
             collapse: false,
+            /*** Các số tương ứng với từng tên trong bảng ObservationType ***/
             selected: [0, 2, 3, 8, 9, 20, 22, 23, 24, 25, 26]
         });
     })
