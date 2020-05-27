@@ -261,9 +261,10 @@ label {
 }
 
 .k-state-selected, .k-state-focused {
-    background-color: #0099fa !important;
+    background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    color: #000 !important;
 }
 
 .k-state-hover {
