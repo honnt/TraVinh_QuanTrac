@@ -60,7 +60,7 @@
             if ($i == count($loaihinh) - 1) {
                 $querry_tramqt_where_loaihinh.= '"obs_station"."obstypesid" = '.$loaihinh[$i];
             } else {
-                $querry_tramqt_where_loaihinh.= '"obs_station"."obstypesid" = '.$loaihinh[$i]." & ";
+                $querry_tramqt_where_loaihinh.= '"obs_station"."obstypesid" = '.$loaihinh[$i]." OR ";
             }
         }
     }

@@ -13,14 +13,16 @@ $.getJSON("services/call_categories_option.php", function (data_category) {
 /*----- DOM Option Loại hình -----*/
 jQuery(document).ready(function ($) {
     $.getJSON("services/call_obstyles_option.php", function (data_obstyles) {
-        $('#loaihinh').comboTree({
-            source: data_obstyles,
-            isMultiple: true,
-            cascadeSelect: true,
-            collapse: false,
-            /*** Các số tương ứng với từng tên trong bảng ObservationType ***/
-            selected: [0, 2, 3, 8, 9, 20, 22, 23, 24, 25, 26]
+        $('#loaihinh').kendoTreeView({
+            checkboxes: {
+                checkChildren: true
+            },
+            dataSource: data_obstyles,
+            check: onCheck
         });
+        $('#quantrac')
+            .append($("<option></option>")
+                .attr('value', '0').text('Lựa chọn trạm quan trắc'));
     })
 })
 

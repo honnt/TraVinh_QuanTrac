@@ -20,7 +20,6 @@
     <link href="assets/css/icomoon/styles.min.css" rel="stylesheet">
     <link href="assets/css/pretty-checkbox/dist/pretty-checkbox.min.css" rel="stylesheet">
     <link href="assets/css/material-icon/materialdesignicons.css" rel="stylesheet" >
-    <link href="assets/css/option_tree.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
 
     <!-- Map CSS -->
@@ -35,6 +34,11 @@
     <link href="vendor/jquery/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/buttons.bootstrap4.min.css" rel="stylesheet">
+    <!-- Kendo UI Jquery CSS -->
+    <link href="vendor/jquery/Kendo_UI/css/kendo.common.min.css" rel="stylesheet">
+    <link href="vendor/jquery/Kendo_UI/css/kendo.rtl.min.css" rel="stylesheet">
+    <link href="vendor/jquery/Kendo_UI/css/kendo.default.min.css" rel="stylesheet">
+    <link href="vendor/jquery/Kendo_UI/css/kendo.default.mobile.min.css" rel="stylesheet">
 
     <!-- Main JS -->
     <script src="vendor/jquery/js/jquery-3.3.1.js"></script>
@@ -43,10 +47,13 @@
     <script src="assets/js/search_plugin/typeahead.bundle.js"></script>
     <script src="assets/js/search_plugin/handlebars.js"></script>
     <script src="assets/js/search_plugin/list.min.js"></script>
-    <script src="assets/js/option_customize/comboTreePlugin.js"></script>
     <!-- Datatables JS -->
     <script src="vendor/jquery/js/jquery.dataTables.min.js"></script>
     <script src="vendor/bootstrap/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Kendo UI Jquery JS -->
+    <!-- <script src="vendor/jquery/Kendo_UI/js/jquery.min.js"></script> -->
+    <script src="vendor/jquery/Kendo_UI/js/jszip.min.js"></script>
+    <script src="vendor/jquery/Kendo_UI/js/kendo.all.min.js"></script>
     <!-- Datatables Plugin -->
     <script src="assets/js/tables/datatables.min.js"></script>
     <script src="assets/js/tables/extensions/responsive.min.js"></script>
@@ -263,8 +270,11 @@
                             <span for="loaihinh" style="margin-left: 1px">&nbsp;Loại hình</span>
                         </div>
                         <div class="form-group col-xs-12 col-md-12 search-advanced">
-                            <input type="text" id="loaihinh" placeholder="Lựa chọn loại hình"
-                                   autocomplete="off"/>
+                            <div class="k-content">
+                                <div id="loaihinh"></div>
+                            </div>
+                            <!-- <input type="text" id="loaihinh" placeholder="Lựa chọn loại hình"
+                                   autocomplete="off"/> -->
                             <!-- <select class="form-control" id="loaihinh">
                                 DOM từ DB vào
                             </select> -->
@@ -297,7 +307,7 @@
                             <span for="quantrac">&nbsp;Trạm quan trắc</span>
                         </div>
                         <div class="form-group col-xs-12 col-md-12 search-advanced">
-                            <select class="form-control" id="quantrac">
+                            <select class="form-control" id="quantrac" onchange="search_tramqt()">
                                 <!-- DOM từ DB vào -->
                             </select>
                         </div>

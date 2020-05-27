@@ -48,7 +48,9 @@ https://askubuntu.com/questions/599921/adminer-none-of-the-supported-php-extensi
 https://www.semicolonworld.com/question/32508/add-json-element-to-multidimensional-json-object-php
 
 ### Note xử lý onchange in map using Select Option/Checkbox Input
++ Thêm event `onChange` vào `<select class="form-control" id="quantrac" onchange="search_tramqt()"></select>`
 + Vào trang show hết tất cả điểm (lựa chọn loại hình được tích `Tất cả` ==> done)
 + Ghép chuỗi trong service: sử dụng linh hoạt `%20` (dấu " ") và `%27` (dấu "'")
 + Đưa về sử dụng Leaflet Ajax + Option Onchange + Ghép chuỗi service URL
 + Thanks my Master: http://dev.dothanhlong.org/geoserver_cql_query_ajax_json/
++ Ban đầu sử dụng ComboTree_Plguin ==> Hỗ trợ Onchange không hiệu quả ==> Chuyển sang sử dụng Kendo_UI ==> done

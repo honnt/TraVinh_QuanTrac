@@ -24,17 +24,18 @@
         if ($value['parentid'] == null) {
             $option[] = array(
                 'id' => $value['id'],
-                'title' => $value['name'],
-                'subs' => array()
+                'text' => $value['name'],
+                'expanded' => false,
+                'items' => array()
             );
         }
     }
     foreach ($option as $i => $value) {
         foreach ($original_data as $key => $value) {
             if ($value['parentid'] == $option[$i]["id"]) {
-                array_push($option[$i]["subs"], array(
+                array_push($option[$i]["items"], array(
                     "id" => $value['id'],
-                    "title" => $value['name'],
+                    "text" => $value['name'],
                 ));
             }
         }
@@ -43,8 +44,10 @@
     // $option_final = $option;
     $option_final[] = array(
         'id' => '0',
-        'title' => 'Tất cả',
-        'subs' => $option
+        'text' => 'Tất cả',
+        'checked' => true,
+        'expanded' => true,
+        'items' => $option
     );
 
     $final_data = json_encode($option_final, JSON_PRETTY_PRINT);

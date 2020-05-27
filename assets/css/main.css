@@ -236,15 +236,17 @@ label {
 }
 
 .search-error, .search-error-basic {
-    margin-bottom: 10px;
-    margin-left: 21px;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 0px;
     color: #ff142d;
     font-weight: bold;
 }
 
 .search-success, .search-success-basic {
-    margin-bottom: 10px;
-    margin-left: 21px;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 0px;
     color: #00a709;
     font-weight: bold;
 }
@@ -252,6 +254,24 @@ label {
 #search-advanced-btn, #search-basic-btn, #statistic-btn {
     width: 96.5% !important;
     font-size: 16px;
+}
+
+.k-bot .k-in {
+    font-weight: bolder;
+}
+
+.k-state-selected, .k-state-focused {
+    background-color: #0099fa !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.k-state-hover {
+    background-color: transparent !important;
+}
+
+.k-checkbox::before {
+    color: #0099fa;
 }
 
 /*** Custom tag <hr> ***/
