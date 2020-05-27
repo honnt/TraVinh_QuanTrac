@@ -1,15 +1,3 @@
-/*----- DOM Option Loại trạm -----*/
-$.getJSON("services/call_categories_option.php", function (data_category) {
-    $('#loaitram')
-        .append($("<option></option>")
-            .attr('value', 'none').text("Lựa chọn loại trạm"));
-    $.each(data_category, function (key, value) {
-        $('#loaitram')
-            .append($("<option></option>")
-                .attr('value', value.name).text(value.name));
-    });
-})
-
 /*----- DOM Option Loại hình -----*/
 jQuery(document).ready(function ($) {
     $.getJSON("services/call_obstyles_option.php", function (data_obstyles) {
@@ -24,6 +12,18 @@ jQuery(document).ready(function ($) {
             .append($("<option></option>")
                 .attr('value', '0').text('Lựa chọn trạm quan trắc'));
     })
+})
+
+/*----- DOM Option Loại trạm -----*/
+$.getJSON("services/call_categories_option.php", function (data_category) {
+    $('#loaitram')
+        .append($("<option></option>")
+            .attr('value', 'none').text("Lựa chọn loại trạm"));
+    $.each(data_category, function (key, value) {
+        $('#loaitram')
+            .append($("<option></option>")
+                .attr('value', value.name).text(value.name));
+    });
 })
 
 /*----- DOM Option Huyện -----*/
