@@ -1,49 +1,51 @@
 /*----- Search Basic -----*/
+
+/*** Function Search Basic ***/
 $(document).one("ajaxStop", function () {
     $("#loading").hide();
     sizeLayerControl();
 
     /*** Search tên điểm quan trắc ***/
     var quantracBH = new Bloodhound({
-        name: "quantrac_search_basic",
+        name: "quantrac_search",
         datumTokenizer: function (d) {
             return Bloodhound.tokenizers.whitespace(d.name);
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: quantrac_search_basic,
+        local: quantrac_search,
         limit: 10
     });
 
     /*** Search loại trạm quan trắc ***/
     var quantrac_loaitramBH = new Bloodhound({
-        name: "quantrac_search_basic",
+        name: "quantrac_search",
         datumTokenizer: function (d) {
             return Bloodhound.tokenizers.whitespace(d.loaitram);
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: quantrac_search_basic,
+        local: quantrac_search,
         limit: 10
     });
 
     /*** Search loại hình quan trắc ***/
     var quantrac_loaihinhBH = new Bloodhound({
-        name: "quantrac_search_basic",
+        name: "quantrac_search",
         datumTokenizer: function (d) {
             return Bloodhound.tokenizers.whitespace(d.loaihinh);
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: quantrac_search_basic,
+        local: quantrac_search,
         limit: 10
     });
 
     /*** Search quận huyện quan trắc ***/
     var quantrac_districtBH = new Bloodhound({
-        name: "quantrac_search_basic",
+        name: "quantrac_search",
         datumTokenizer: function (d) {
             return Bloodhound.tokenizers.whitespace(d.quanhuyen);
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: quantrac_search_basic,
+        local: quantrac_search,
         limit: 10
     });
 
@@ -58,7 +60,7 @@ $(document).one("ajaxStop", function () {
         hint: false
     }, {
         /*** Tên quan trắc ***/
-        name: "quantrac_search_basic",
+        name: "quantrac_search",
         displayKey: "name",
         source: quantracBH.ttAdapter(),
         templates: {
@@ -79,7 +81,7 @@ $(document).one("ajaxStop", function () {
         }
     }, {
         /*** Loại trạm quan trắc ***/
-        name: "quantrac_search_basic",
+        name: "quantrac_search",
         displayKey: "loaitram",
         source: quantrac_loaitramBH.ttAdapter(),
         templates: {
@@ -100,7 +102,7 @@ $(document).one("ajaxStop", function () {
         }
     }, {
         /*** Loại hình quan trắc ***/
-        name: "quantrac_search_basic",
+        name: "quantrac_search",
         displayKey: "loaihinh",
         source: quantrac_loaihinhBH.ttAdapter(),
         templates: {
@@ -121,7 +123,7 @@ $(document).one("ajaxStop", function () {
         }
     }, {
         /*** Huyện/thành phố quan trắc ***/
-        name: "quantrac_search_basic",
+        name: "quantrac_search",
         displayKey: "quanhuyen",
         source: quantrac_districtBH.ttAdapter(),
         templates: {
@@ -141,7 +143,7 @@ $(document).one("ajaxStop", function () {
             ].join(""))
         }
     }).on("typeahead:selected", function (obj, datum) {
-        if (datum.source === "quantrac_search_basic") {
+        if (datum.source === "quantrac_search") {
             map.setView([datum.lat, datum.lng], 15);
 
             /*** Tự động mở Modal sau khi Zoom ***/
@@ -193,7 +195,6 @@ function onCheck() {
 
     checkedNodeIds(treeView.dataSource.view(), checkedNodes);
 
-    // console.log(checkedNodes);
     if (checkedNodes.length == 0) {
         item_loaihinh_cond = '%20loaihinh[]=9999';
     } else {
@@ -204,9 +205,9 @@ function onCheck() {
     }
     url_call_station = 'services/call_obser_station.php?'
         + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond;
-    console.log(url_call_station);
     view_data_quantrac.refresh(url_call_station);
 
+    //console.log($('#loaihinh_tv_active').css("aria-checked", "true"));
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
     $('#quantrac').find('option').remove();
     $.getJSON(url_call_station, function (data_DOM_qt) {
@@ -310,17 +311,13 @@ $("#district").change(function () {
 
 function search_tramqt() {
     var tramqt = document.getElementById("quantrac").value;
-    if ($('#loaihinh option').length == 1) {
-
-    } else {
-        for (var attr_modal in quantrac_search_advanced) {
-            var datum = quantrac_search_advanced[attr_modal];
-            if (tramqt == datum.name) {
-                /*** Tự động mở Modal sau khi Zoom ***/
-                map.setView([datum.lat, datum.lng], 15);
-                if (map._layers[datum.id]) {
-                    map._layers[datum.id].fire("click");
-                }
+    for (var attr_modal in quantrac_search) {
+        var datum = quantrac_search[attr_modal];
+        if (tramqt == datum.name) {
+            /*** Tự động mở Modal sau khi Zoom ***/
+            map.setView([datum.lat, datum.lng], 15);
+            if (map._layers[datum.id]) {
+                map._layers[datum.id].fire("click");
             }
         }
     }

@@ -1,4 +1,4 @@
-/*----- DOM Option Loại hình -----*/
+/*----- DOM Option Loại hình và Quan trắc -----*/
 jQuery(document).ready(function ($) {
     $.getJSON("services/call_obstyles_option.php", function (data_obstyles) {
         $('#loaihinh').kendoTreeView({

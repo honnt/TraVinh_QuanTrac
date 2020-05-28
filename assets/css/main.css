@@ -256,8 +256,13 @@ label {
     font-size: 16px;
 }
 
-.k-bot .k-in {
-    font-weight: bolder;
+.k-content {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+ul.k-group.k-treeview-lines li.k-item.k-first.k-last div.k-top.k-bot span.k-in {
+    font-weight: bolder !important;
 }
 
 .k-state-selected, .k-state-focused {
