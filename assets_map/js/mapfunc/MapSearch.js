@@ -1,5 +1,4 @@
 /*----- Search Basic -----*/
-
 /*** Function Search Basic ***/
 $(document).one("ajaxStop", function () {
     $("#loading").hide();
