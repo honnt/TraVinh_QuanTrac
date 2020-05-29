@@ -256,28 +256,10 @@ label {
     font-size: 16px;
 }
 
-.k-content {
+#loaihinh {
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-ul.k-group.k-treeview-lines li.k-item.k-first.k-last div.k-top.k-bot span.k-in {
-    font-weight: bolder !important;
-}
-
-.k-state-selected, .k-state-focused {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: #000 !important;
-}
-
-.k-state-hover {
-    background-color: transparent !important;
-}
-
-.k-checkbox::before {
-    color: #0099fa;
+    overflow-x: auto;
 }
 
 /*** Custom tag <hr> ***/

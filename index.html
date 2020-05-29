@@ -34,11 +34,8 @@
     <link href="vendor/jquery/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/buttons.bootstrap4.min.css" rel="stylesheet">
-    <!-- Kendo UI Jquery CSS -->
-    <link href="vendor/jquery/Kendo_UI/css/kendo.common.min.css" rel="stylesheet">
-    <link href="vendor/jquery/Kendo_UI/css/kendo.rtl.min.css" rel="stylesheet">
-    <link href="vendor/jquery/Kendo_UI/css/kendo.default.min.css" rel="stylesheet">
-    <link href="vendor/jquery/Kendo_UI/css/kendo.default.mobile.min.css" rel="stylesheet">
+    <!-- Tree CSS -->
+    <link href="assets/css/tree/default/style.css" rel="stylesheet">
 
     <!-- Main JS -->
     <script src="vendor/jquery/js/jquery-3.3.1.js"></script>
@@ -50,10 +47,8 @@
     <!-- Datatables JS -->
     <script src="vendor/jquery/js/jquery.dataTables.min.js"></script>
     <script src="vendor/bootstrap/js/dataTables.bootstrap4.min.js"></script>
-    <!-- Kendo UI Jquery JS -->
-    <!-- <script src="vendor/jquery/Kendo_UI/js/jquery.min.js"></script> -->
-    <script src="vendor/jquery/Kendo_UI/js/jszip.min.js"></script>
-    <script src="vendor/jquery/Kendo_UI/js/kendo.all.min.js"></script>
+    <!-- Tree JS -->
+    <script src="assets/js/tree/jstree.js"></script>
     <!-- Datatables Plugin -->
     <script src="assets/js/tables/datatables.min.js"></script>
     <script src="assets/js/tables/extensions/responsive.min.js"></script>
@@ -271,9 +266,7 @@
                             <span for="loaihinh" style="margin-left: 1px">&nbsp;Loại hình</span>
                         </div>
                         <div class="form-group col-xs-12 col-md-12 search-advanced">
-                            <div class="k-content">
-                                <div id="loaihinh"></div>
-                            </div>
+                            <div id="loaihinh"></div>
                             <!-- <input type="text" id="loaihinh" placeholder="Lựa chọn loại hình"
                                    autocomplete="off"/> -->
                             <!-- <select class="form-control" id="loaihinh">

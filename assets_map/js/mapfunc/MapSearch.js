@@ -174,25 +174,9 @@ var item_loaitram_cond = '%20loaitram=1=1';
 var item_quanhuyen_cond = '%20quanhuyen=1=1';
 
 /*** Lựa chọn loại hình ***/
-/*** Kiểm tra các Checkbox ***/
-function checkedNodeIds(nodes, checkedNodes) {
-    for (var i = 0; i < nodes.length; i++) {
-        if (nodes[i].checked) {
-            checkedNodes.push(nodes[i].id);
-        }
-        if (nodes[i].hasChildren) {
-            checkedNodeIds(nodes[i].children.view(), checkedNodes);
-        }
-    }
-}
-
-/*** Checkbox thay đổi trên map ***/
-function onCheck() {
-    var checkedNodes = [],
-        treeView = $("#loaihinh").data("kendoTreeView"),
-        message;
-
-    checkedNodeIds(treeView.dataSource.view(), checkedNodes);
+$('#loaihinh').on("changed.jstree", function (e, data) {
+    var checkedNodes = []
+    checkedNodes = data.selected;
 
     if (checkedNodes.length == 0) {
         item_loaihinh_cond = '%20loaihinh[]=9999';
@@ -206,7 +190,6 @@ function onCheck() {
         + item_loaihinh_cond + '&' + item_loaitram_cond + '&' + item_quanhuyen_cond;
     view_data_quantrac.refresh(url_call_station);
 
-    //console.log($('#loaihinh_tv_active').css("aria-checked", "true"));
     /*** Cập nhật lại hiển thị của dữ liệu quan trắc ***/
     $('#quantrac').find('option').remove();
     $.getJSON(url_call_station, function (data_DOM_qt) {
@@ -230,7 +213,7 @@ function onCheck() {
                     .attr('value', DOM_opt_qt[i].properties.name).text(DOM_opt_qt[i].properties.name));
         }
     })
-}
+})
 
 /*** Lựa chọn loại trạm ***/
 $("#loaitram").change(function () {
