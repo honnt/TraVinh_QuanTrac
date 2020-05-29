@@ -55,3 +55,4 @@ https://www.semicolonworld.com/question/32508/add-json-element-to-multidimension
 + Thanks my Master: http://dev.dothanhlong.org/geoserver_cql_query_ajax_json/
 + Ban đầu sử dụng ComboTree_Plguin ==> Hỗ trợ Onchange không hiệu quả ==> Chuyển sang sử dụng Kendo_UI ==> done
 + Kendo_UI có tính phí, sử dụng bản miễn phí chỉ có 30 ngày ==> Chuyển sang Plugin TreeJS ==> done
++ Close All Open Node Specify Branches: https://groups.google.com/forum/#!topic/jstree/EoDgKTh5xFc
